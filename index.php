@@ -2035,12 +2035,15 @@
                     '\n000000001 300   L ' + (this.record._300a ? '$$a' + this.record._300a : '') + 
                     (this.record._300b ? '$b' + this.record._300b : '') + (this.record._300c ? '$c' + this.record._300c : '') +
                     (this.record._310a ? '\n=310 ##$a' + this.record._310a : '') + this.record.personal_names_array.join("") +
+                    (this.record.doi ? '\n000000001 500   L $$aDisponível em: https://doi.org/' + this.record.doi + '. Acesso em: ' : '') +
                     '\n000000001 650 7 L $$a'  + 
                     '\n000000001 650 7 L $$a'  + 
                     '\n000000001 650 7 L $$a'  + 
                     '\n000000001 650 7 L $$a'  + 
                     (this.record.doi ? '\n000000001 8564  L $$zClicar sobre o botão para acesso ao texto completo$$uhttps://doi.org/' + this.record.doi + '$$3DOI' : '') +
-                    (this.record._856u ? '\n000000001 856'+ this.record._856_ind1 + this.record._856_ind2 + ' L $$u' + this.record._856u + '' : '')
+                    (this.record._856u ? '\n000000001 856'+ this.record._856_ind1 + this.record._856_ind2 + ' L $$u' + this.record._856u + '' : '') +
+                    '\n000000001 945   L $$aP' +
+                    '\n000000001 946   L $$a'
 
 
                 }
