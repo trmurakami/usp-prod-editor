@@ -1856,6 +1856,12 @@
                             <input type="text" id="_310a" v-model="record._310a" class="form-control" placeholder="Current publication frequency" aria-label="Current publication frequency" aria-describedby="_310a">
                         </div>
                         <!-- \310 -->
+                        <!-- 520 -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="title">Resumo</span>
+                            <input type="textarea" id="resumo" v-model="record._520a" class="form-control" placeholder="Resumo" aria-label="Resumo" aria-describedby="resumo">
+                        </div>
+                        <!-- \520 -->
                         <!-- 773 -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="analitica">Analítica</span>
@@ -2009,6 +2015,7 @@
                     _300b: null,
                     _300c: null,
                     _310a: null,
+                    _520a: null,
                     _773_ind1: '0',
                     _773t: null,
                     _773hn: null,
@@ -2057,8 +2064,10 @@
                     (this.record._260b ? '$$b' + this.record._260b : '') + (this.record._260c ? '$$c' + this.record._260c : '') +
                     '\n000000001 300   L ' + (this.record._300a ? '$$a' + this.record._300a : '') + 
                     (this.record._300b ? '$b' + this.record._300b : '') + (this.record._300c ? '$c' + this.record._300c : '') +
-                    (this.record._310a ? '\n=310 ##$a' + this.record._310a : '') + this.record.personal_names_array.join("") +
+                    (this.record._310a ? '\n000000001 310   L $$a' + this.record._310a : '') + 
+                    this.record.personal_names_array.join("") +
                     (this.record.doi ? '\n000000001 500   L $$aDisponível em: https://doi.org/' + this.record.doi + '. Acesso em: ' : '') +
+                    (this.record._520a ? '\n000000001 520   L $$a' + this.record._520a : '') +
                     '\n000000001 650 7 L $$a' + 
                     '\n000000001 650 7 L $$a' + 
                     '\n000000001 650 7 L $$a' + 
@@ -2110,6 +2119,7 @@
                         this.record._773hp = this.crossrefRecord.data.message.page,
                         this.record._773hx = this.crossrefRecord.data.message.ISSN[0],
                         this.record._260b = this.crossrefRecord.data.message.publisher,
+                        this.record._520a = this.crossrefRecord.data.message.abstract,
                         this.record._260c = this.crossrefRecord.data.message.issued['date-parts'][0][0],
                         this.f008.p07_10 = this.crossrefRecord.data.message.issued['date-parts'][0][0]                        
                         Object.values(this.crossrefRecord.data.message.author).forEach(val => {
