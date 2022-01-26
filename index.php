@@ -75,398 +75,398 @@
 
                             <label for="008_15_17">15-17 - Place of publication, production, or execution</label>
                             <select class="form-select selectpicker" aria-label="Place of publication" id="008_15_17" v-model="f008.p15_17" data-live-search="true">
-                                <option value="xx#">xx# - No place, unknown, or undetermined</option>
-                                <option value="vp#">vp# - Various places</option>
-                                <option value="bl#">bl# - Brazil</option>
-                                <option value="aa#">aa# - Albania</option>
+                            <option value="xx^">xx^ - No place, unknown, or undetermined</option>
+                                <option value="vp^">vp^ - Various places</option>
+                                <option value="bl^">bl^ - Brazil</option>
+                                <option value="aa^">aa^ - Albania</option>
                                 <option value="abc">abc - Alberta</option>
                                 <option value="-ac">-ac - Ashmore and Cartier Islands</option>
                                 <option value="aca">aca - Australian Capital Territory</option>
-                                <option value="ae#">ae# - Algeria</option>
-                                <option value="af#">af# - Afghanistan</option>
-                                <option value="ag#">ag# - Argentina</option>
+                                <option value="ae^">ae^ - Algeria</option>
+                                <option value="af^">af^ - Afghanistan</option>
+                                <option value="ag^">ag^ - Argentina</option>
                                 <option value="-ai">-ai - Anguilla</option>
-                                <option value="ai#">ai# - Armenia (Republic)</option>
+                                <option value="ai^">ai^ - Armenia (Republic)</option>
                                 <option value="air">air - Armenian S.S.R.</option>
-                                <option value="aj#">aj# - Azerbaijan</option>
+                                <option value="aj^">aj^ - Azerbaijan</option>
                                 <option value="ajr">ajr - Azerbaijan S.S.R.</option>
                                 <option value="aku">aku - Alaska</option>
                                 <option value="alu">alu - Alabama</option>
-                                <option value="am#">am# - Anguilla</option>
-                                <option value="an#">an# - Andorra</option>
-                                <option value="ao#">ao# - Angola</option>
-                                <option value="aq#">aq# - Antigua and Barbuda</option>
+                                <option value="am^">am^ - Anguilla</option>
+                                <option value="an^">an^ - Andorra</option>
+                                <option value="ao^">ao^ - Angola</option>
+                                <option value="aq^">aq^ - Antigua and Barbuda</option>
                                 <option value="aru">aru - Arkansas</option>
-                                <option value="as#">as# - American Samoa</option>
-                                <option value="at#">at# - Australia</option>
-                                <option value="au#">au# - Austria</option>
-                                <option value="aw#">aw# - Aruba</option>
-                                <option value="ay#">ay# - Antarctica</option>
+                                <option value="as^">as^ - American Samoa</option>
+                                <option value="at^">at^ - Australia</option>
+                                <option value="au^">au^ - Austria</option>
+                                <option value="aw^">aw^ - Aruba</option>
+                                <option value="ay^">ay^ - Antarctica</option>
                                 <option value="azu">azu - Arizona</option>
-                                <option value="ba#">ba# - Bahrain</option>
-                                <option value="bb#">bb# - Barbados</option>
+                                <option value="ba^">ba^ - Bahrain</option>
+                                <option value="bb^">bb^ - Barbados</option>
                                 <option value="bcc">bcc - British Columbia</option>
-                                <option value="bd#">bd# - Burundi</option>
-                                <option value="be#">be# - Belgium</option>
-                                <option value="bf#">bf# - Bahamas</option>
-                                <option value="bg#">bg# - Bangladesh</option>
-                                <option value="bh#">bh# - Belize</option>
-                                <option value="bi#">bi# - British Indian Ocean Territory</option>
-                                <option value="bl#">bl# - Brazil</option>
-                                <option value="bm#">bm# - Bermuda Islands</option>
-                                <option value="bn#">bn# - Bosnia and Herzegovina</option>
-                                <option value="bo#">bo# - Bolivia</option>
-                                <option value="bp#">bp# - Solomon Islands</option>
-                                <option value="br#">br# - Burma</option>
-                                <option value="bs#">bs# - Botswana</option>
-                                <option value="bt#">bt# - Bhutan</option>
-                                <option value="bu#">bu# - Bulgaria</option>
-                                <option value="bv#">bv# - Bouvet Island</option>
-                                <option value="bw#">bw# - Belarus</option>
+                                <option value="bd^">bd^ - Burundi</option>
+                                <option value="be^">be^ - Belgium</option>
+                                <option value="bf^">bf^ - Bahamas</option>
+                                <option value="bg^">bg^ - Bangladesh</option>
+                                <option value="bh^">bh^ - Belize</option>
+                                <option value="bi^">bi^ - British Indian Ocean Territory</option>
+                                <option value="bl^">bl^ - Brazil</option>
+                                <option value="bm^">bm^ - Bermuda Islands</option>
+                                <option value="bn^">bn^ - Bosnia and Herzegovina</option>
+                                <option value="bo^">bo^ - Bolivia</option>
+                                <option value="bp^">bp^ - Solomon Islands</option>
+                                <option value="br^">br^ - Burma</option>
+                                <option value="bs^">bs^ - Botswana</option>
+                                <option value="bt^">bt^ - Bhutan</option>
+                                <option value="bu^">bu^ - Bulgaria</option>
+                                <option value="bv^">bv^ - Bouvet Island</option>
+                                <option value="bw^">bw^ - Belarus</option>
                                 <option value="bwr">bwr - Byelorussian S.S.R.</option>
-                                <option value="bx#">bx# - Brunei</option>
-                                <option value="ca#">ca# - Caribbean Netherlands</option>
+                                <option value="bx^">bx^ - Brunei</option>
+                                <option value="ca^">ca^ - Caribbean Netherlands</option>
                                 <option value="cau">cau - California</option>
-                                <option value="cb#">cb# - Cambodia</option>
-                                <option value="cc#">cc# - China</option>
-                                <option value="cd#">cd# - Chad</option>
-                                <option value="ce#">ce# - Sri Lanka</option>
-                                <option value="cf#">cf# - Congo (Brazzaville)</option>
-                                <option value="cg#">cg# - Congo (Democratic Republic)</option>
-                                <option value="ch#">ch# - China (Republic : 1949- )</option>
-                                <option value="ci#">ci# - Croatia</option>
-                                <option value="cj#">cj# - Cayman Islands</option>
-                                <option value="ck#">ck# - Colombia</option>
-                                <option value="cl#">cl# - Chile</option>
-                                <option value="cm#">cm# - Cameroon</option>
+                                <option value="cb^">cb^ - Cambodia</option>
+                                <option value="cc^">cc^ - China</option>
+                                <option value="cd^">cd^ - Chad</option>
+                                <option value="ce^">ce^ - Sri Lanka</option>
+                                <option value="cf^">cf^ - Congo (Brazzaville)</option>
+                                <option value="cg^">cg^ - Congo (Democratic Republic)</option>
+                                <option value="ch^">ch^ - China (Republic : 1949- )</option>
+                                <option value="ci^">ci^ - Croatia</option>
+                                <option value="cj^">cj^ - Cayman Islands</option>
+                                <option value="ck^">ck^ - Colombia</option>
+                                <option value="cl^">cl^ - Chile</option>
+                                <option value="cm^">cm^ - Cameroon</option>
                                 <option value="-cn">-cn - Canada</option>
-                                <option value="co#">co# - Curaçao</option>
+                                <option value="co^">co^ - Curaçao</option>
                                 <option value="cou">cou - Colorado</option>
                                 <option value="-cp">-cp - Canton and Enderbury Islands</option>
-                                <option value="cq#">cq# - Comoros</option>
-                                <option value="cr#">cr# - Costa Rica</option>
+                                <option value="cq^">cq^ - Comoros</option>
+                                <option value="cr^">cr^ - Costa Rica</option>
                                 <option value="-cs">-cs - Czechoslovakia</option>
                                 <option value="ctu">ctu - Connecticut</option>
-                                <option value="cu#">cu# - Cuba</option>
-                                <option value="cv#">cv# - Cabo Verde</option>
-                                <option value="cw#">cw# - Cook Islands</option>
-                                <option value="cx#">cx# - Central African Republic</option>
-                                <option value="cy#">cy# - Cyprus</option>
+                                <option value="cu^">cu^ - Cuba</option>
+                                <option value="cv^">cv^ - Cabo Verde</option>
+                                <option value="cw^">cw^ - Cook Islands</option>
+                                <option value="cx^">cx^ - Central African Republic</option>
+                                <option value="cy^">cy^ - Cyprus</option>
                                 <option value="-cz">-cz - Canal Zone</option>
                                 <option value="dcu">dcu - District of Columbia</option>
                                 <option value="deu">deu - Delaware</option>
-                                <option value="dk#">dk# - Denmark</option>
-                                <option value="dm#">dm# - Benin</option>
-                                <option value="dq#">dq# - Dominica</option>
-                                <option value="dr#">dr# - Dominican Republic</option>
-                                <option value="ea#">ea# - Eritrea</option>
-                                <option value="ec#">ec# - Ecuador</option>
-                                <option value="eg#">eg# - Equatorial Guinea</option>
-                                <option value="em#">em# - Timor-Leste</option>
+                                <option value="dk^">dk^ - Denmark</option>
+                                <option value="dm^">dm^ - Benin</option>
+                                <option value="dq^">dq^ - Dominica</option>
+                                <option value="dr^">dr^ - Dominican Republic</option>
+                                <option value="ea^">ea^ - Eritrea</option>
+                                <option value="ec^">ec^ - Ecuador</option>
+                                <option value="eg^">eg^ - Equatorial Guinea</option>
+                                <option value="em^">em^ - Timor-Leste</option>
                                 <option value="enk">enk - England</option>
-                                <option value="er#">er# - Estonia</option>
+                                <option value="er^">er^ - Estonia</option>
                                 <option value="err">err - Estonia</option>
-                                <option value="es#">es# - El Salvador</option>
-                                <option value="et#">et# - Ethiopia</option>
-                                <option value="fa#">fa# - Faroe Islands</option>
-                                <option value="fg#">fg# - French Guiana</option>
-                                <option value="fi#">fi# - Finland</option>
-                                <option value="fj#">fj# - Fiji</option>
-                                <option value="fk#">fk# - Falkland Islands</option>
+                                <option value="es^">es^ - El Salvador</option>
+                                <option value="et^">et^ - Ethiopia</option>
+                                <option value="fa^">fa^ - Faroe Islands</option>
+                                <option value="fg^">fg^ - French Guiana</option>
+                                <option value="fi^">fi^ - Finland</option>
+                                <option value="fj^">fj^ - Fiji</option>
+                                <option value="fk^">fk^ - Falkland Islands</option>
                                 <option value="flu">flu - Florida</option>
-                                <option value="fm#">fm# - Micronesia (Federated States)</option>
-                                <option value="fp#">fp# - French Polynesia</option>
-                                <option value="fr#">fr# - France</option>
-                                <option value="fs#">fs# - Terres australes et antarctiques françaises</option>
-                                <option value="ft#">ft# - Djibouti</option>
+                                <option value="fm^">fm^ - Micronesia (Federated States)</option>
+                                <option value="fp^">fp^ - French Polynesia</option>
+                                <option value="fr^">fr^ - France</option>
+                                <option value="fs^">fs^ - Terres australes et antarctiques françaises</option>
+                                <option value="ft^">ft^ - Djibouti</option>
                                 <option value="gau">gau - Georgia</option>
-                                <option value="gb#">gb# - Kiribati</option>
-                                <option value="gd#">gd# - Grenada</option>
+                                <option value="gb^">gb^ - Kiribati</option>
+                                <option value="gd^">gd^ - Grenada</option>
                                 <option value="-ge">-ge - Germany (East)</option>
-                                <option value="gg#">gg# - Guernsey</option>
-                                <option value="gh#">gh# - Ghana</option>
-                                <option value="gi#">gi# - Gibraltar</option>
-                                <option value="gl#">gl# - Greenland</option>
-                                <option value="gm#">gm# - Gambia</option>
+                                <option value="gg^">gg^ - Guernsey</option>
+                                <option value="gh^">gh^ - Ghana</option>
+                                <option value="gi^">gi^ - Gibraltar</option>
+                                <option value="gl^">gl^ - Greenland</option>
+                                <option value="gm^">gm^ - Gambia</option>
                                 <option value="-gn">-gn - Gilbert and Ellice Islands</option>
-                                <option value="go#">go# - Gabon</option>
-                                <option value="gp#">gp# - Guadeloupe</option>
-                                <option value="gr#">gr# - Greece</option>
-                                <option value="gs#">gs# - Georgia (Republic)</option>
+                                <option value="go^">go^ - Gabon</option>
+                                <option value="gp^">gp^ - Guadeloupe</option>
+                                <option value="gr^">gr^ - Greece</option>
+                                <option value="gs^">gs^ - Georgia (Republic)</option>
                                 <option value="gsr">gsr - Georgian S.S.R.</option>
-                                <option value="gt#">gt# - Guatemala</option>
-                                <option value="gu#">gu# - Guam</option>
-                                <option value="gv#">gv# - Guinea</option>
-                                <option value="gw#">gw# - Germany</option>
-                                <option value="gy#">gy# - Guyana</option>
-                                <option value="gz#">gz# - Gaza Strip</option>
+                                <option value="gt^">gt^ - Guatemala</option>
+                                <option value="gu^">gu^ - Guam</option>
+                                <option value="gv^">gv^ - Guinea</option>
+                                <option value="gw^">gw^ - Germany</option>
+                                <option value="gy^">gy^ - Guyana</option>
+                                <option value="gz^">gz^ - Gaza Strip</option>
                                 <option value="hiu">hiu - Hawaii</option>
                                 <option value="-hk">-hk - Hong Kong</option>
-                                <option value="hm#">hm# - Heard and McDonald Islands</option>
-                                <option value="ho#">ho# - Honduras</option>
-                                <option value="ht#">ht# - Haiti</option>
-                                <option value="hu#">hu# - Hungary</option>
+                                <option value="hm^">hm^ - Heard and McDonald Islands</option>
+                                <option value="ho^">ho^ - Honduras</option>
+                                <option value="ht^">ht^ - Haiti</option>
+                                <option value="hu^">hu^ - Hungary</option>
                                 <option value="iau">iau - Iowa</option>
-                                <option value="ic#">ic# - Iceland</option>
+                                <option value="ic^">ic^ - Iceland</option>
                                 <option value="idu">idu - Idaho</option>
-                                <option value="ie#">ie# - Ireland</option>
-                                <option value="ii#">ii# - India</option>
+                                <option value="ie^">ie^ - Ireland</option>
+                                <option value="ii^">ii^ - India</option>
                                 <option value="ilu">ilu - Illinois</option>
-                                <option value="im#">im# - Isle of Man</option>
+                                <option value="im^">im^ - Isle of Man</option>
                                 <option value="inu">inu - Indiana</option>
-                                <option value="io#">io# - Indonesia</option>
-                                <option value="iq#">iq# - Iraq</option>
-                                <option value="ir#">ir# - Iran</option>
-                                <option value="is#">is# - Israel</option>
-                                <option value="it#">it# - Italy</option>
+                                <option value="io^">io^ - Indonesia</option>
+                                <option value="iq^">iq^ - Iraq</option>
+                                <option value="ir^">ir^ - Iran</option>
+                                <option value="is^">is^ - Israel</option>
+                                <option value="it^">it^ - Italy</option>
                                 <option value="-iu">-iu - Israel-Syria Demilitarized Zones</option>
-                                <option value="iv#">iv# - Côte d'Ivoire</option>
+                                <option value="iv^">iv^ - Côte d'Ivoire</option>
                                 <option value="-iw">-iw - Israel-Jordan Demilitarized Zones</option>
-                                <option value="iy#">iy# - Iraq-Saudi Arabia Neutral Zone</option>
-                                <option value="ja#">ja# - Japan</option>
-                                <option value="je#">je# - Jersey</option>
-                                <option value="ji#">ji# - Johnston Atoll</option>
-                                <option value="jm#">jm# - Jamaica</option>
+                                <option value="iy^">iy^ - Iraq-Saudi Arabia Neutral Zone</option>
+                                <option value="ja^">ja^ - Japan</option>
+                                <option value="je^">je^ - Jersey</option>
+                                <option value="ji^">ji^ - Johnston Atoll</option>
+                                <option value="jm^">jm^ - Jamaica</option>
                                 <option value="-jn">-jn - Jan Mayen</option>
-                                <option value="jo#">jo# - Jordan</option>
-                                <option value="ke#">ke# - Kenya</option>
-                                <option value="kg#">kg# - Kyrgyzstan</option>
+                                <option value="jo^">jo^ - Jordan</option>
+                                <option value="ke^">ke^ - Kenya</option>
+                                <option value="kg^">kg^ - Kyrgyzstan</option>
                                 <option value="kgr">kgr - Kirghiz S.S.R.</option>
-                                <option value="kn#">kn# - Korea (North)</option>
-                                <option value="ko#">ko# - Korea (South)</option>
+                                <option value="kn^">kn^ - Korea (North)</option>
+                                <option value="ko^">ko^ - Korea (South)</option>
                                 <option value="ksu">ksu - Kansas</option>
-                                <option value="ku#">ku# - Kuwait</option>
-                                <option value="kv#">kv# - Kosovo</option>
+                                <option value="ku^">ku^ - Kuwait</option>
+                                <option value="kv^">kv^ - Kosovo</option>
                                 <option value="kyu">kyu - Kentucky</option>
-                                <option value="kz#">kz# - Kazakhstan</option>
+                                <option value="kz^">kz^ - Kazakhstan</option>
                                 <option value="kzr">kzr - Kazakh S.S.R.</option>
                                 <option value="lau">lau - Louisiana</option>
-                                <option value="lb#">lb# - Liberia</option>
-                                <option value="le#">le# - Lebanon</option>
-                                <option value="lh#">lh# - Liechtenstein</option>
-                                <option value="li#">li# - Lithuania</option>
+                                <option value="lb^">lb^ - Liberia</option>
+                                <option value="le^">le^ - Lebanon</option>
+                                <option value="lh^">lh^ - Liechtenstein</option>
+                                <option value="li^">li^ - Lithuania</option>
                                 <option value="lir">lir - Lithuania</option>
                                 <option value="-ln">-ln - Central and Southern Line Islands</option>
-                                <option value="lo#">lo# - Lesotho</option>
-                                <option value="ls#">ls# - Laos</option>
-                                <option value="lu#">lu# - Luxembourg</option>
-                                <option value="lv#">lv# - Latvia</option>
+                                <option value="lo^">lo^ - Lesotho</option>
+                                <option value="ls^">ls^ - Laos</option>
+                                <option value="lu^">lu^ - Luxembourg</option>
+                                <option value="lv^">lv^ - Latvia</option>
                                 <option value="lvr">lvr - Latvia</option>
-                                <option value="ly#">ly# - Libya</option>
+                                <option value="ly^">ly^ - Libya</option>
                                 <option value="mau">mau - Massachusetts</option>
                                 <option value="mbc">mbc - Manitoba</option>
-                                <option value="mc#">mc# - Monaco</option>
+                                <option value="mc^">mc^ - Monaco</option>
                                 <option value="mdu">mdu - Maryland</option>
                                 <option value="meu">meu - Maine</option>
-                                <option value="mf#">mf# - Mauritius</option>
-                                <option value="mg#">mg# - Madagascar</option>
+                                <option value="mf^">mf^ - Mauritius</option>
+                                <option value="mg^">mg^ - Madagascar</option>
                                 <option value="-mh">-mh - Macao</option>
                                 <option value="miu">miu - Michigan</option>
-                                <option value="mj#">mj# - Montserrat</option>
-                                <option value="mk#">mk# - Oman</option>
-                                <option value="ml#">ml# - Mali</option>
-                                <option value="mm#">mm# - Malta</option>
+                                <option value="mj^">mj^ - Montserrat</option>
+                                <option value="mk^">mk^ - Oman</option>
+                                <option value="ml^">ml^ - Mali</option>
+                                <option value="mm^">mm^ - Malta</option>
                                 <option value="mnu">mnu - Minnesota</option>
-                                <option value="mo#">mo# - Montenegro</option>
+                                <option value="mo^">mo^ - Montenegro</option>
                                 <option value="mou">mou - Missouri</option>
-                                <option value="mp#">mp# - Mongolia</option>
-                                <option value="mq#">mq# - Martinique</option>
-                                <option value="mr#">mr# - Morocco</option>
+                                <option value="mp^">mp^ - Mongolia</option>
+                                <option value="mq^">mq^ - Martinique</option>
+                                <option value="mr^">mr^ - Morocco</option>
                                 <option value="msu">msu - Mississippi</option>
                                 <option value="mtu">mtu - Montana</option>
-                                <option value="mu#">mu# - Mauritania</option>
-                                <option value="mv#">mv# - Moldova</option>
+                                <option value="mu^">mu^ - Mauritania</option>
+                                <option value="mv^">mv^ - Moldova</option>
                                 <option value="mvr">mvr - Moldavian S.S.R.</option>
-                                <option value="mw#">mw# - Malawi</option>
-                                <option value="mx#">mx# - Mexico</option>
-                                <option value="my#">my# - Malaysia</option>
-                                <option value="mz#">mz# - Mozambique</option>
+                                <option value="mw^">mw^ - Malawi</option>
+                                <option value="mx^">mx^ - Mexico</option>
+                                <option value="my^">my^ - Malaysia</option>
+                                <option value="mz^">mz^ - Mozambique</option>
                                 <option value="-na">-na - Netherlands Antilles</option>
                                 <option value="nbu">nbu - Nebraska</option>
                                 <option value="ncu">ncu - North Carolina</option>
                                 <option value="ndu">ndu - North Dakota</option>
-                                <option value="ne#">ne# - Netherlands</option>
+                                <option value="ne^">ne^ - Netherlands</option>
                                 <option value="nfc">nfc - Newfoundland and Labrador</option>
-                                <option value="ng#">ng# - Niger</option>
+                                <option value="ng^">ng^ - Niger</option>
                                 <option value="nhu">nhu - New Hampshire</option>
                                 <option value="nik">nik - Northern Ireland</option>
                                 <option value="nju">nju - New Jersey</option>
                                 <option value="nkc">nkc - New Brunswick</option>
-                                <option value="nl#">nl# - New Caledonia</option>
+                                <option value="nl^">nl^ - New Caledonia</option>
                                 <option value="-nm">-nm - Northern Mariana Islands</option>
                                 <option value="nmu">nmu - New Mexico</option>
-                                <option value="nn#">nn# - Vanuatu</option>
-                                <option value="no#">no# - Norway</option>
-                                <option value="np#">np# - Nepal</option>
-                                <option value="nq#">nq# - Nicaragua</option>
-                                <option value="nr#">nr# - Nigeria</option>
+                                <option value="nn^">nn^ - Vanuatu</option>
+                                <option value="no^">no^ - Norway</option>
+                                <option value="np^">np^ - Nepal</option>
+                                <option value="nq^">nq^ - Nicaragua</option>
+                                <option value="nr^">nr^ - Nigeria</option>
                                 <option value="nsc">nsc - Nova Scotia</option>
                                 <option value="ntc">ntc - Northwest Territories</option>
-                                <option value="nu#">nu# - Nauru</option>
+                                <option value="nu^">nu^ - Nauru</option>
                                 <option value="nuc">nuc - Nunavut</option>
                                 <option value="nvu">nvu - Nevada</option>
-                                <option value="nw#">nw# - Northern Mariana Islands</option>
-                                <option value="nx#">nx# - Norfolk Island</option>
+                                <option value="nw^">nw^ - Northern Mariana Islands</option>
+                                <option value="nx^">nx^ - Norfolk Island</option>
                                 <option value="nyu">nyu - New York (State)</option>
-                                <option value="nz#">nz# - New Zealand</option>
+                                <option value="nz^">nz^ - New Zealand</option>
                                 <option value="ohu">ohu - Ohio</option>
                                 <option value="oku">oku - Oklahoma</option>
                                 <option value="onc">onc - Ontario</option>
                                 <option value="oru">oru - Oregon</option>
-                                <option value="ot#">ot# - Mayotte</option>
+                                <option value="ot^">ot^ - Mayotte</option>
                                 <option value="pau">pau - Pennsylvania</option>
-                                <option value="pc#">pc# - Pitcairn Island</option>
-                                <option value="pe#">pe# - Peru</option>
-                                <option value="pf#">pf# - Paracel Islands</option>
-                                <option value="pg#">pg# - Guinea-Bissau</option>
-                                <option value="ph#">ph# - Philippines</option>
+                                <option value="pc^">pc^ - Pitcairn Island</option>
+                                <option value="pe^">pe^ - Peru</option>
+                                <option value="pf^">pf^ - Paracel Islands</option>
+                                <option value="pg^">pg^ - Guinea-Bissau</option>
+                                <option value="ph^">ph^ - Philippines</option>
                                 <option value="pic">pic - Prince Edward Island</option>
-                                <option value="pk#">pk# - Pakistan</option>
-                                <option value="pl#">pl# - Poland</option>
-                                <option value="pn#">pn# - Panama</option>
-                                <option value="po#">po# - Portugal</option>
-                                <option value="pp#">pp# - Papua New Guinea</option>
-                                <option value="pr#">pr# - Puerto Rico</option>
+                                <option value="pk^">pk^ - Pakistan</option>
+                                <option value="pl^">pl^ - Poland</option>
+                                <option value="pn^">pn^ - Panama</option>
+                                <option value="po^">po^ - Portugal</option>
+                                <option value="pp^">pp^ - Papua New Guinea</option>
+                                <option value="pr^">pr^ - Puerto Rico</option>
                                 <option value="-pt">-pt - Portuguese Timor</option>
-                                <option value="pw#">pw# - Palau</option>
-                                <option value="py#">py# - Paraguay</option>
-                                <option value="qa#">qa# - Qatar</option>
+                                <option value="pw^">pw^ - Palau</option>
+                                <option value="py^">py^ - Paraguay</option>
+                                <option value="qa^">qa^ - Qatar</option>
                                 <option value="qea">qea - Queensland</option>
                                 <option value="quc">quc - Québec (Province)</option>
-                                <option value="rb#">rb# - Serbia</option>
-                                <option value="re#">re# - Réunion</option>
-                                <option value="rh#">rh# - Zimbabwe</option>
+                                <option value="rb^">rb^ - Serbia</option>
+                                <option value="re^">re^ - Réunion</option>
+                                <option value="rh^">rh^ - Zimbabwe</option>
                                 <option value="riu">riu - Rhode Island</option>
-                                <option value="rm#">rm# - Romania</option>
-                                <option value="ru#">ru# - Russia (Federation)</option>
+                                <option value="rm^">rm^ - Romania</option>
+                                <option value="ru^">ru^ - Russia (Federation)</option>
                                 <option value="rur">rur - Russian S.F.S.R.</option>
-                                <option value="rw#">rw# - Rwanda</option>
+                                <option value="rw^">rw^ - Rwanda</option>
                                 <option value="-ry">-ry - Ryukyu Islands, Southern</option>
-                                <option value="sa#">sa# - South Africa</option>
+                                <option value="sa^">sa^ - South Africa</option>
                                 <option value="-sb">-sb - Svalbard</option>
-                                <option value="sc#">sc# - Saint-Barthélemy</option>
+                                <option value="sc^">sc^ - Saint-Barthélemy</option>
                                 <option value="scu">scu - South Carolina</option>
-                                <option value="sd#">sd# - South Sudan</option>
+                                <option value="sd^">sd^ - South Sudan</option>
                                 <option value="sdu">sdu - South Dakota</option>
-                                <option value="se#">se# - Seychelles</option>
-                                <option value="sf#">sf# - Sao Tome and Principe</option>
-                                <option value="sg#">sg# - Senegal</option>
-                                <option value="sh#">sh# - Spanish North Africa</option>
-                                <option value="si#">si# - Singapore</option>
-                                <option value="sj#">sj# - Sudan</option>
+                                <option value="se^">se^ - Seychelles</option>
+                                <option value="sf^">sf^ - Sao Tome and Principe</option>
+                                <option value="sg^">sg^ - Senegal</option>
+                                <option value="sh^">sh^ - Spanish North Africa</option>
+                                <option value="si^">si^ - Singapore</option>
+                                <option value="sj^">sj^ - Sudan</option>
                                 <option value="-sk">-sk - Sikkim</option>
-                                <option value="sl#">sl# - Sierra Leone</option>
-                                <option value="sm#">sm# - San Marino</option>
-                                <option value="sn#">sn# - Sint Maarten</option>
+                                <option value="sl^">sl^ - Sierra Leone</option>
+                                <option value="sm^">sm^ - San Marino</option>
+                                <option value="sn^">sn^ - Sint Maarten</option>
                                 <option value="snc">snc - Saskatchewan</option>
-                                <option value="so#">so# - Somalia</option>
-                                <option value="sp#">sp# - Spain</option>
-                                <option value="sq#">sq# - Eswatini</option>
-                                <option value="sr#">sr# - Surinam</option>
-                                <option value="ss#">ss# - Western Sahara</option>
-                                <option value="st#">st# - Saint-Martin</option>
+                                <option value="so^">so^ - Somalia</option>
+                                <option value="sp^">sp^ - Spain</option>
+                                <option value="sq^">sq^ - Eswatini</option>
+                                <option value="sr^">sr^ - Surinam</option>
+                                <option value="ss^">ss^ - Western Sahara</option>
+                                <option value="st^">st^ - Saint-Martin</option>
                                 <option value="stk">stk - Scotland</option>
-                                <option value="su#">su# - Saudi Arabia</option>
+                                <option value="su^">su^ - Saudi Arabia</option>
                                 <option value="-sv">-sv - Swan Islands</option>
-                                <option value="sw#">sw# - Sweden</option>
-                                <option value="sx#">sx# - Namibia</option>
-                                <option value="sy#">sy# - Syria</option>
-                                <option value="sz#">sz# - Switzerland</option>
-                                <option value="ta#">ta# - Tajikistan</option>
+                                <option value="sw^">sw^ - Sweden</option>
+                                <option value="sx^">sx^ - Namibia</option>
+                                <option value="sy^">sy^ - Syria</option>
+                                <option value="sz^">sz^ - Switzerland</option>
+                                <option value="ta^">ta^ - Tajikistan</option>
                                 <option value="tar">tar - Tajik S.S.R.</option>
-                                <option value="tc#">tc# - Turks and Caicos Islands</option>
-                                <option value="tg#">tg# - Togo</option>
-                                <option value="th#">th# - Thailand</option>
-                                <option value="ti#">ti# - Tunisia</option>
-                                <option value="tk#">tk# - Turkmenistan</option>
+                                <option value="tc^">tc^ - Turks and Caicos Islands</option>
+                                <option value="tg^">tg^ - Togo</option>
+                                <option value="th^">th^ - Thailand</option>
+                                <option value="ti^">ti^ - Tunisia</option>
+                                <option value="tk^">tk^ - Turkmenistan</option>
                                 <option value="tkr">tkr - Turkmen S.S.R.</option>
-                                <option value="tl#">tl# - Tokelau</option>
+                                <option value="tl^">tl^ - Tokelau</option>
                                 <option value="tma">tma - Tasmania</option>
                                 <option value="tnu">tnu - Tennessee</option>
-                                <option value="to#">to# - Tonga</option>
-                                <option value="tr#">tr# - Trinidad and Tobago</option>
-                                <option value="ts#">ts# - United Arab Emirates</option>
+                                <option value="to^">to^ - Tonga</option>
+                                <option value="tr^">tr^ - Trinidad and Tobago</option>
+                                <option value="ts^">ts^ - United Arab Emirates</option>
                                 <option value="-tt">-tt - Trust Territory of the Pacific Islands</option>
-                                <option value="tu#">tu# - Turkey</option>
-                                <option value="tv#">tv# - Tuvalu</option>
+                                <option value="tu^">tu^ - Turkey</option>
+                                <option value="tv^">tv^ - Tuvalu</option>
                                 <option value="txu">txu - Texas</option>
-                                <option value="tz#">tz# - Tanzania</option>
-                                <option value="ua#">ua# - Egypt</option>
-                                <option value="uc#">uc# - United States Misc. Caribbean Islands</option>
-                                <option value="ug#">ug# - Uganda</option>
+                                <option value="tz^">tz^ - Tanzania</option>
+                                <option value="ua^">ua^ - Egypt</option>
+                                <option value="uc^">uc^ - United States Misc. Caribbean Islands</option>
+                                <option value="ug^">ug^ - Uganda</option>
                                 <option value="-ui">-ui - United Kingdom Misc. Islands</option>
                                 <option value="uik">uik - United Kingdom Misc. Islands</option>
                                 <option value="-uk">-uk - United Kingdom</option>
-                                <option value="un#">un# - Ukraine</option>
+                                <option value="un^">un^ - Ukraine</option>
                                 <option value="unr">unr - Ukraine</option>
-                                <option value="up#">up# - United States Misc. Pacific Islands</option>
+                                <option value="up^">up^ - United States Misc. Pacific Islands</option>
                                 <option value="-ur">-ur - Soviet Union</option>
                                 <option value="-us">-us - United States</option>
                                 <option value="utu">utu - Utah</option>
-                                <option value="uv#">uv# - Burkina Faso</option>
-                                <option value="uy#">uy# - Uruguay</option>
-                                <option value="uz#">uz# - Uzbekistan</option>
+                                <option value="uv^">uv^ - Burkina Faso</option>
+                                <option value="uy^">uy^ - Uruguay</option>
+                                <option value="uz^">uz^ - Uzbekistan</option>
                                 <option value="uzr">uzr - Uzbek S.S.R.</option>
                                 <option value="vau">vau - Virginia</option>
-                                <option value="vb#">vb# - British Virgin Islands</option>
-                                <option value="vc#">vc# - Vatican City</option>
-                                <option value="ve#">ve# - Venezuela</option>
-                                <option value="vi#">vi# - Virgin Islands of the United States</option>
-                                <option value="vm#">vm# - Vietnam</option>
+                                <option value="vb^">vb^ - British Virgin Islands</option>
+                                <option value="vc^">vc^ - Vatican City</option>
+                                <option value="ve^">ve^ - Venezuela</option>
+                                <option value="vi^">vi^ - Virgin Islands of the United States</option>
+                                <option value="vm^">vm^ - Vietnam</option>
                                 <option value="-vn">-vn - Vietnam, North</option>
-                                <option value="vp#">vp# - Various places</option>
+                                <option value="vp^">vp^ - Various places</option>
                                 <option value="vra">vra - Victoria</option>
                                 <option value="-vs">-vs - Vietnam, South</option>
                                 <option value="vtu">vtu - Vermont</option>
                                 <option value="wau">wau - Washington (State)</option>
                                 <option value="-wb">-wb - West Berlin</option>
                                 <option value="wea">wea - Western Australia</option>
-                                <option value="wf#">wf# - Wallis and Futuna</option>
+                                <option value="wf^">wf^ - Wallis and Futuna</option>
                                 <option value="wiu">wiu - Wisconsin</option>
-                                <option value="wj#">wj# - West Bank of the Jordan River</option>
-                                <option value="wk#">wk# - Wake Island</option>
+                                <option value="wj^">wj^ - West Bank of the Jordan River</option>
+                                <option value="wk^">wk^ - Wake Island</option>
                                 <option value="wlk">wlk - Wales</option>
-                                <option value="ws#">ws# - Samoa</option>
+                                <option value="ws^">ws^ - Samoa</option>
                                 <option value="wvu">wvu - West Virginia</option>
                                 <option value="wyu">wyu - Wyoming</option>
-                                <option value="xa#">xa# - Christmas Island (Indian Ocean)</option>
-                                <option value="xb#">xb# - Cocos (Keeling) Islands</option>
-                                <option value="xc#">xc# - Maldives</option>
-                                <option value="xd#">xd# - Saint Kitts-Nevis</option>
-                                <option value="xe#">xe# - Marshall Islands</option>
-                                <option value="xf#">xf# - Midway Islands</option>
+                                <option value="xa^">xa^ - Christmas Island (Indian Ocean)</option>
+                                <option value="xb^">xb^ - Cocos (Keeling) Islands</option>
+                                <option value="xc^">xc^ - Maldives</option>
+                                <option value="xd^">xd^ - Saint Kitts-Nevis</option>
+                                <option value="xe^">xe^ - Marshall Islands</option>
+                                <option value="xf^">xf^ - Midway Islands</option>
                                 <option value="xga">xga - Coral Sea Islands Territory</option>
-                                <option value="xh#">xh# - Niue</option>
+                                <option value="xh^">xh^ - Niue</option>
                                 <option value="-xi">-xi - Saint Kitts-Nevis-Anguilla</option>
-                                <option value="xj#">xj# - Saint Helena</option>
-                                <option value="xk#">xk# - Saint Lucia</option>
-                                <option value="xl#">xl# - Saint Pierre and Miquelon</option>
-                                <option value="xm#">xm# - Saint Vincent and the Grenadines</option>
-                                <option value="xn#">xn# - North Macedonia</option>
+                                <option value="xj^">xj^ - Saint Helena</option>
+                                <option value="xk^">xk^ - Saint Lucia</option>
+                                <option value="xl^">xl^ - Saint Pierre and Miquelon</option>
+                                <option value="xm^">xm^ - Saint Vincent and the Grenadines</option>
+                                <option value="xn^">xn^ - North Macedonia</option>
                                 <option value="xna">xna - New South Wales</option>
-                                <option value="xo#">xo# - Slovakia</option>
+                                <option value="xo^">xo^ - Slovakia</option>
                                 <option value="xoa">xoa - Northern Territory</option>
-                                <option value="xp#">xp# - Spratly Island</option>
-                                <option value="xr#">xr# - Czech Republic</option>
+                                <option value="xp^">xp^ - Spratly Island</option>
+                                <option value="xr^">xr^ - Czech Republic</option>
                                 <option value="xra">xra - South Australia</option>
-                                <option value="xs#">xs# - South Georgia and the South Sandwich Islands</option>
-                                <option value="xv#">xv# - Slovenia</option>
-                                <option value="xx#">xx# - No place, unknown, or undetermined</option>
+                                <option value="xs^">xs^ - South Georgia and the South Sandwich Islands</option>
+                                <option value="xv^">xv^ - Slovenia</option>
+                                <option value="xx^">xx^ - No place, unknown, or undetermined</option>
                                 <option value="xxc">xxc - Canada</option>
                                 <option value="xxk">xxk - United Kingdom</option>
                                 <option value="xxr">xxr - Soviet Union</option>
                                 <option value="xxu">xxu - United States</option>
-                                <option value="ye#">ye# - Yemen</option>
+                                <option value="ye^">ye^ - Yemen</option>
                                 <option value="ykc">ykc - Yukon Territory</option>
                                 <option value="-ys">-ys - Yemen (People's Democratic Republic)</option>
                                 <option value="-yu">-yu - Serbia and Montenegro</option>
-                                <option value="za#">za# - Zambia</option>
+                                <option value="za^">za^ - Zambia</option>
                             </select>
                             <br/>
                             <template v-if="recordType === 'Book'">
                                 <label for="p18">18 - Illustrations (006/01-04)</label>
                                 <select class="form-select" aria-label="Illustrations" id="p18" v-model="f008.p18">
-                                    <option value="#"># - No illustrations</option>
+                                    <option value="^">^ - No illustrations</option>
                                     <option value="a">a - Illustrations</option>
                                     <option value="b">b - Maps</option>
                                     <option value="c">c - Portraits</option>
@@ -487,7 +487,7 @@
                             
                                 <label for="p19">19 - Illustrations (006/01-04)</label>
                                 <select class="form-select" aria-label="Illustrations" id="p19" v-model="f008.p19">
-                                    <option value="#"># - No illustrations</option>
+                                    <option value="^">^ - No illustrations</option>
                                     <option value="a">a - Illustrations</option>
                                     <option value="b">b - Maps</option>
                                     <option value="c">c - Portraits</option>
@@ -507,7 +507,7 @@
                                 </select>
                                 <label for="p20">20 - Illustrations (006/01-04)</label>
                                 <select class="form-select" aria-label="Illustrations" id="p20" v-model="f008.p20">
-                                    <option value="#"># - No illustrations</option>
+                                    <option value="^">^ - No illustrations</option>
                                     <option value="a">a - Illustrations</option>
                                     <option value="b">b - Maps</option>
                                     <option value="c">c - Portraits</option>
@@ -527,7 +527,7 @@
                                 </select>
                                 <label for="p21">21 - Illustrations (006/01-04)</label>
                                 <select class="form-select" aria-label="Illustrations" id="p21" v-model="f008.p21">
-                                    <option value="#"># - No illustrations</option>
+                                    <option value="^">^ - No illustrations</option>
                                     <option value="a">a - Illustrations</option>
                                     <option value="b">b - Maps</option>
                                     <option value="c">c - Portraits</option>
@@ -548,7 +548,7 @@
 
                                 <label for="p22">22 - Target audience (006/05)</label>
                                 <select class="form-select" aria-label="Target audience" id="p22" v-model="f008.p22">
-                                    <option value="#"># - Unknown or not specified</option>
+                                    <option value="^">^ - Unknown or not specified</option>
                                     <option value="a">a - Preschool</option>
                                     <option value="b">b - Primary</option>
                                     <option value="c">c - Pre-adolescent</option>
@@ -562,7 +562,7 @@
 
                                 <label for="p23">23 - Form of item (006/06)</label>
                                 <select class="form-select" aria-label="Form of item" id="p23" v-model="f008.p23">
-                                    <option value="#"># - None of the following</option>
+                                    <option value="^">^ - None of the following</option>
                                     <option value="a">a - Microfilm</option>
                                     <option value="b">b - Microfiche</option>
                                     <option value="c">c - Microopaque</option>
@@ -577,7 +577,7 @@
 
                                 <label for="p24">24 - Nature of contents (006/07-10)</label>
                                 <select class="form-select" aria-label="Nature of contents" id="p24" v-model="f008.p24">
-                                    <option value="#"># - No specified nature of contents</option>
+                                    <option value="^">^ - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
                                     <option value="c">c - Catalogs</option>
@@ -610,7 +610,7 @@
 
                                 <label for="p25">25 - Nature of contents (006/07-10)</label>
                                 <select class="form-select" aria-label="Nature of contents" id="p25" v-model="f008.p25">
-                                    <option value="#"># - No specified nature of contents</option>
+                                    <option value="^">^ - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
                                     <option value="c">c - Catalogs</option>
@@ -643,7 +643,7 @@
                     
                                 <label for="p26">26 - Nature of contents (006/07-10)</label>
                                 <select class="form-select" aria-label="Nature of contents" id="p26" v-model="f008.p26">
-                                    <option value="#"># - No specified nature of contents</option>
+                                    <option value="^">^ - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
                                     <option value="c">c - Catalogs</option>
@@ -676,7 +676,7 @@
 
                                 <label for="p27">27 - Nature of contents (006/07-10)</label>
                                 <select class="form-select" aria-label="Nature of contents" id="p27" v-model="f008.p27">
-                                    <option value="#"># - No specified nature of contents</option>
+                                    <option value="^">^ - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
                                     <option value="c">c - Catalogs</option>
@@ -709,7 +709,7 @@
 
                                 <label for="p28">28 - Government publication (006/11)</label>
                                 <select class="form-select" aria-label="Government publication" id="p28" v-model="f008.p28">
-                                    <option value="#"># - Not a government publication</option>
+                                    <option value="^">^ - Not a government publication</option>
                                     <option value="a">a - Autonomous or semi-autonomous component</option>
                                     <option value="c">c - Multilocal</option>
                                     <option value="f">f - Federal/national</option>
@@ -763,7 +763,7 @@
 
                                 <label for="p34">34 - Biography (006/17)</label>
                                 <select class="form-select" aria-label="Biography" id="p34" v-model="f008.p34">
-                                    <option value="#"># - No biographical material</option>
+                                    <option value="^">^ - No biographical material</option>
                                     <option value="a">a - Autobiography</option>
                                     <option value="b">b - Individual biography</option>
                                     <option value="c">c - Collective biography</option>
@@ -775,7 +775,7 @@
 
                                 <label for="p18">18 - Frequency (006/01)</label>
                                 <select class="form-select" aria-label="Frequency" id="p18" v-model="f008.p18">
-                                    <option value="#"># - No determinable frequency</option>
+                                    <option value="^">^ - No determinable frequency</option>
                                     <option value="a">a - Annual</option>
                                     <option value="b">b - Bimonthly</option>
                                     <option value="c">c - Semiweekly</option>
@@ -1571,7 +1571,7 @@
                             <br/>
                             <label for="p38">38 - Modified record</label>
                             <select class="form-select" aria-label="Modified record" id="p38" v-model="f008.p38">
-                                <option value="#"># - Not modified</option>
+                                <option value="^">^ - Not modified</option>
                                 <option value="d">d - Dashed-on information omitted</option>
                                 <option value="o">o - Completely romanized/printed cards romanized</option>
                                 <option value="r">r - Completely romanized/printed cards in script</option>
@@ -1582,7 +1582,7 @@
 
                             <label for="p39">39 - Cataloging source</label>
                             <select class="form-select" aria-label="Cataloging source" id="p39" v-model="f008.p39">
-                                <option value="#"># - National bibliographic agency</option>
+                                <option value="^">^ - National bibliographic agency</option>
                                 <option value="c">c - Cooperative cataloging program</option>
                                 <option value="d">d - Other</option>
                                 <option value="u">u - Unknown</option>
@@ -1822,22 +1822,22 @@
                                     <option value="7">7</option>
                                 </select>
                             </div>
-                            <input type="text" id="title" v-model="record.title" class="form-control" placeholder="Title statement" aria-label="Title statement" aria-describedby="title">
+                            <input type="text" id="title" v-model="record.title" class="form-control" placeholder="Título" aria-label="Title statement" aria-describedby="title">
                         </div>
                         <!-- \TITLE -->
                         <!-- SUBTITLE -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="title">Subtítulo</span>
-                            <input type="text" id="subtitle" v-model="record.subtitle" class="form-control" aria-label="Subtitle statement" aria-describedby="subtitle">
+                            <input type="text" id="subtitle" v-model="record.subtitle" class="form-control" placeholder="Subtítulo" aria-label="Subtitle statement" aria-describedby="subtitle">
                         </div>
                         <!-- \SUBTITLE -->
 
                         <!-- 260 -->
                         <div class="input-group mb-3 col">
                             <span class="input-group-text col-md-1" id="title">Imprenta</span>
-                            <input type="text" id="_260a" v-model="record._260a" class="form-control col-md-3" placeholder="Place of publication" aria-label="Place of publication" aria-describedby="_260a">
-                            <input type="text" id="_260b" v-model="record._260b" class="form-control col-md-3" placeholder="Name of publisher" aria-label="Name of publisher" aria-describedby="_260b">
-                            <input type="text" id="_260c" v-model="record._260c" class="form-control col-md-3" placeholder="Date of publication" aria-label="Date of publication" aria-describedby="_260c">
+                            <input type="text" id="_260a" v-model="record._260a" class="form-control col-md-3" placeholder="Local de publicação" aria-label="Place of publication" aria-describedby="_260a">
+                            <input type="text" id="_260b" v-model="record._260b" class="form-control col-md-3" placeholder="Editora" aria-label="Name of publisher" aria-describedby="_260b">
+                            <input type="text" id="_260c" v-model="record._260c" class="form-control col-md-3" placeholder="Ano de publicação" aria-label="Date of publication" aria-describedby="_260c">
                         </div>
                         <!-- \260 -->
 
@@ -1927,11 +1927,11 @@
                 isbnShow: false,
                 f008Show: false,
                 ldr:{
-                    record_length: '00000',
+                    record_length: '^^^^^',
                     record_status: 'n',
                     type_of_record: 'a',
                     bibliographic_level: 'm',
-                    type_of_control: "#",
+                    type_of_control: '^',
                     character_coding_scheme: "a",
                     base_address_of_data:'00000', 
                     encoding_level: "I",
@@ -1939,30 +1939,30 @@
                     multipart_resource_record_level: "#"
                 },
                 f008:{
-                    p00_05: '000000',
+                    p00_05: '^^^^^^',
                     p06: 's',
                     p07_10: '0000',
-                    p11_14: '####',
-                    p15_17: 'bl#',
-                    p18: '#',
-                    p19: '#',
-                    p20: '#',
-                    p21: '#',
-                    p22: '#',
-                    p23: '#',
-                    p24: '#',
-                    p25: '#',
-                    p26: '#',
-                    p27: '#',
-                    p28: '#',
+                    p11_14: '^^^^',
+                    p15_17: 'bl^',
+                    p18: '^',
+                    p19: '^',
+                    p20: '^',
+                    p21: '^',
+                    p22: '^',
+                    p23: '^',
+                    p24: '^',
+                    p25: '^',
+                    p26: '^',
+                    p27: '^',
+                    p28: '^',
                     p29: '0',
                     p30: '0',
                     p31: '0',
-                    p32: '#',
+                    p32: '^',
                     p33: '0',
-                    p34: '#',
+                    p34: '^',
                     p35_37: 'por',
-                    p38: '#',
+                    p38: '^',
                     p39: 'd'
                 },
                 crossrefRecord: null,
@@ -2026,8 +2026,8 @@
                     (this.record.doi ? '\n000000001 0247  L $$a' + this.record.doi + '$$2doi': '') +
                     '\n000000001 040   L $$aUSP/AGUIA' +
                     '\n000000001 0410  L $$a' + this.f008.p35_37 +
-                    '\n000000001 044   L $$a' + this.f008.p15_17.replace('#', '')  +
-                    (this.record.personal_name[0] ? '\n=100  ' + this.record.personal_name[0].ind1 + '#$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$q' + this.record.personal_name[0].q : '') : '') +
+                    '\n000000001 044   L $$a' + this.f008.p15_17.replace('^', '')  +
+                    (this.record.personal_name[0] ? '\n000000001 100' + this.record.personal_name[0].ind1 + '  L $$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$q' + this.record.personal_name[0].q : '') : '') +
                     '\n000000001 245' + this.record._245_ind1 + this.record._245_ind2 + ' L $$a' + this.record.title +
                     (this.record.subtitle ? '$$b' + this.record.subtitle : '') +
                     '\n000000001 260   L ' + (this.record._260a ? '$$a' + this.record._260a : '') + 
@@ -2039,7 +2039,8 @@
                     '\n000000001 650 7 L $$a'  + 
                     '\n000000001 650 7 L $$a'  + 
                     '\n000000001 650 7 L $$a'  + 
-                    (this.record._856u ? '\n=856 '+ this.record._856_ind1 + this.record._856_ind2 + '$u' + this.record._856u : '')
+                    (this.record.doi ? '\n000000001 8564  L $$zClicar sobre o botão para acesso ao texto completo$$uhttps://doi.org/' + this.record.doi + '$$3DOI' : '') +
+                    (this.record._856u ? '\n000000001 856'+ this.record._856_ind1 + this.record._856_ind2 + ' L $$u' + this.record._856u + '' : '')
 
 
                 }
