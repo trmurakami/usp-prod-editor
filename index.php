@@ -1793,7 +1793,7 @@
                             </div>
 
                             <button @click="addField('personal_name')" class="btn btn-info btn-sm mb-2">
-                            Add Personal Name
+                            Adicionar Nome Pessoal
                             </button>
                         </template>
                         <!-- \100 -->
@@ -1801,7 +1801,7 @@
 
                         <!-- TITLE -->
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="title">Title</span>
+                            <span class="input-group-text" id="title">Título</span>
                             <div class="input-group-prepend">
                                 <select class="input-group-text form-select" id="_245_ind1" v-model="record._245_ind1">
                                     <option disabled>Title added entry</option>
@@ -1827,22 +1827,14 @@
                         <!-- \TITLE -->
                         <!-- SUBTITLE -->
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="title">Subtitle</span>
+                            <span class="input-group-text" id="title">Subtítulo</span>
                             <input type="text" id="subtitle" v-model="record.subtitle" class="form-control" aria-label="Subtitle statement" aria-describedby="subtitle">
                         </div>
                         <!-- \SUBTITLE -->
 
                         <!-- 260 -->
                         <div class="input-group mb-3 col">
-                            <span class="input-group-text col-md-1" id="title">Imprint</span>
-                            <div class="input-group-prepend col-md-2">
-                                <select class="input-group-text form-select" id="_260_ind1" v-model="record._260_ind1">
-                                    <option disabled>Sequence of publishing statements</option>
-                                    <option value="#"># - Not applicable/No information provided/Earliest available publisher</option>
-                                    <option value="2">2 - Intervening publisher</option>
-                                    <option value="3">3 - Current/latest publisher</option>
-                                </select>
-                            </div>
+                            <span class="input-group-text col-md-1" id="title">Imprenta</span>
                             <input type="text" id="_260a" v-model="record._260a" class="form-control col-md-3" placeholder="Place of publication" aria-label="Place of publication" aria-describedby="_260a">
                             <input type="text" id="_260b" v-model="record._260b" class="form-control col-md-3" placeholder="Name of publisher" aria-label="Name of publisher" aria-describedby="_260b">
                             <input type="text" id="_260c" v-model="record._260c" class="form-control col-md-3" placeholder="Date of publication" aria-label="Date of publication" aria-describedby="_260c">
@@ -1851,7 +1843,7 @@
 
                         <!-- 300 -->
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="_300">Physical Description</span>
+                            <span class="input-group-text" id="_300">Descrição física</span>
                             <input type="text" id="_300a" v-model="record._300a" class="form-control" placeholder="Extent (R)" aria-label="Extent (R)" aria-describedby="_300a">
                             <input type="text" id="_300b" v-model="record._300b" class="form-control" placeholder="Other physical details (NR)" aria-label="Other physical details (NR)" aria-describedby="_300b">
                             <input type="text" id="_300c" v-model="record._300c" class="form-control" placeholder="Dimensions (R)" aria-label="Dimensions (R)" aria-describedby="_300c">
@@ -1866,7 +1858,7 @@
                         <!-- \310 -->
                         <!-- 856 -->
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="title">Electronic Location and Access</span>
+                            <span class="input-group-text" id="title">Acesso e localização eletrônica</span>
                             <div class="input-group-prepend">
                                 <select class="input-group-text form-select" id="_856_ind1" v-model="record._856_ind1">
                                     <option disabled>Access method</option>
@@ -1895,15 +1887,15 @@
 
                     </div>
                     <div class="col-6 col-md-4">
-                        <h2>MARC Record</h2>
+                        <h2>Registro ALEPHSEQ</h2>
                         <pre>
                             {{ complete_record }}
                         </pre>
-                        <span class="btn btn-info text-white copy-btn ml-auto" @click.stop.prevent="copyTestingCode">Copy</span>
+                        <span class="btn btn-info text-white copy-btn ml-auto" @click.stop.prevent="copyTestingCode">Copiar</span>
                         <input type="hidden" id="complete_record" :value="complete_record">
 
                         <div class="alert alert-info" role="alert" v-if="copySuccessful">
-                            Copied successful!
+                            Copiado!
                         </div>
                     </div>
                 </div>
@@ -1913,7 +1905,7 @@
         </main>
         <footer class="footer mt-auto py-3 bg-light">
             <div class="container">
-                <span class="text-muted"><a href="https://github.com/trmurakami/online-marc-editor" target="_blank">Online MARC Editor</a> is an Open Source Software created by <a href="https://github.com/trmurakami" target="_blank">Tiago Murakami</a> &middot; 2022</span>
+                <span class="text-muted"><a href="https://github.com/trmurakami/usp-prod-editor" target="_blank">Editor ALEPHSEQ para a Produção Científica USP</a> é um software livre criado por <a href="https://github.com/trmurakami" target="_blank">Tiago Murakami</a> &middot; 2022</span>
             </div>
         </footer>
 
@@ -1991,8 +1983,6 @@
                     subtitle: null,
                     doi:null,
                     isbn:null,
-                    _260_ind1: "#",
-                    _260_ind2: "#",
                     _260a: null,
                     _260b: null,
                     _260c: null,
@@ -2035,14 +2025,20 @@
                     (this.record.isbn ? '\n=020  ##$a' + this.record.isbn : '') +
                     (this.record.doi ? '\n000000001 0247  L $$a' + this.record.doi + '$$2doi': '') +
                     '\n000000001 040   L $$aUSP/AGUIA' +
+                    '\n000000001 0410  L $$a' + this.f008.p35_37 +
+                    '\n000000001 044   L $$a' + this.f008.p15_17.replace('#', '')  +
                     (this.record.personal_name[0] ? '\n=100  ' + this.record.personal_name[0].ind1 + '#$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$q' + this.record.personal_name[0].q : '') : '') +
-                    '\n=245  ' + this.record._245_ind1 + this.record._245_ind2 + '$a' + this.record.title +
-                    (this.record.subtitle ? '$b' + this.record.subtitle : '') +
-                    '\n=260  ' + this.record._260_ind1 + this.record._260_ind2 + (this.record._260a ? '$a' + this.record._260a : '') + 
-                    (this.record._260b ? '$b' + this.record._260b : '') + (this.record._260c ? '$c' + this.record._260c : '') +
-                    '\n=300  ' + this.record._300_ind1 + this.record._300_ind2 + (this.record._300a ? '$a' + this.record._300a : '') + 
+                    '\n000000001 245' + this.record._245_ind1 + this.record._245_ind2 + ' L $$a' + this.record.title +
+                    (this.record.subtitle ? '$$b' + this.record.subtitle : '') +
+                    '\n000000001 260   L ' + (this.record._260a ? '$$a' + this.record._260a : '') + 
+                    (this.record._260b ? '$$b' + this.record._260b : '') + (this.record._260c ? '$$c' + this.record._260c : '') +
+                    '\n000000001 300   L ' + (this.record._300a ? '$$a' + this.record._300a : '') + 
                     (this.record._300b ? '$b' + this.record._300b : '') + (this.record._300c ? '$c' + this.record._300c : '') +
                     (this.record._310a ? '\n=310 ##$a' + this.record._310a : '') + this.record.personal_names_array.join("") +
+                    '\n000000001 650 7 L $$a'  + 
+                    '\n000000001 650 7 L $$a'  + 
+                    '\n000000001 650 7 L $$a'  + 
+                    '\n000000001 650 7 L $$a'  + 
                     (this.record._856u ? '\n=856 '+ this.record._856_ind1 + this.record._856_ind2 + '$u' + this.record._856u : '')
 
 
