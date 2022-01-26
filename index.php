@@ -1859,7 +1859,7 @@
                         <!-- 520 -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="title">Resumo</span>
-                            <input type="textarea" id="resumo" v-model="record._520a" class="form-control" placeholder="Resumo" aria-label="Resumo" aria-describedby="resumo">
+                            <textarea type="textarea" id="resumo" v-model="record._520a" class="form-control" placeholder="Resumo" aria-label="Resumo" aria-describedby="resumo"></textarea>
                         </div>
                         <!-- \520 -->
                         <!-- 773 -->
