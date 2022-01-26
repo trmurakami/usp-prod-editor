@@ -1720,12 +1720,12 @@
                             </select>
                             <label for="type_of_control">08 - Type of control</label>
                             <select class="form-select" aria-label="Type of control" id="type_of_control" v-model="ldr.type_of_control">
-                                <option value="#"># - No specified type</option>
+                                <option value="^">^ - No specified type</option>
                                 <option value="a">a - Archival</option>
                             </select>
                             <label for="character_coding_scheme">09 - Character coding scheme</label>
                             <select class="form-select" aria-label="Character coding scheme" id="character_coding_scheme" v-model="ldr.character_coding_scheme">
-                                <option value="#"># - MARC-8</option>
+                                <option value="^">^ - MARC-8</option>
                                 <option value="a">a - UCS/Unicode</option>
                             </select>
                             <!-- <div class="mb-3">
@@ -1734,7 +1734,7 @@
                             </div> -->
                             <label for="encoding_level">17 - Encoding level</label>
                             <select class="form-select" aria-label="Encoding level" id="encoding_level" v-model="ldr.encoding_level">
-                                <option value="#"># - Full level</option>
+                                <option value="^">^ - Full level</option>
                                 <option value="1">1 - Full level, material not examined</option>
                                 <option value="2">2 - Less-than-full level, material not examined</option>
                                 <option value="3">3 - Abbreviated level</option>
@@ -1752,7 +1752,7 @@
                             </select>
                             <label for="descriptive_cataloging_form">18 - Descriptive cataloging form</label>
                             <select class="form-select" aria-label="Descriptive cataloging form" id="descriptive_cataloging_form" v-model="ldr.descriptive_cataloging_form">
-                                <option value="#"># - Non-ISBD</option>
+                                <option value="^">^ - Non-ISBD</option>
                                 <option value="a">a - AACR 2</option>
                                 <option value="c">c - ISBD punctuation omitted</option>
                                 <option value="i">i - ISBD punctuation included</option>
@@ -1761,7 +1761,7 @@
                             </select>
                             <label for="multipart_resource_record_level">19 - Multipart resource record level</label>
                             <select class="form-select" aria-label="Multipart resource record level" id="multipart_resource_record_level" v-model="ldr.multipart_resource_record_level">
-                                <option value="#"># - Not specified or not applicable</option>
+                                <option value="^">^ - Not specified or not applicable</option>
                                 <option value="a">a - Set</option>
                                 <option value="b">b - Part with independent title</option>
                                 <option value="c">c - Part with dependent title</option>
@@ -1856,6 +1856,23 @@
                             <input type="text" id="_310a" v-model="record._310a" class="form-control" placeholder="Current publication frequency" aria-label="Current publication frequency" aria-describedby="_310a">
                         </div>
                         <!-- \310 -->
+                        <!-- 773 -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="analitica">Analítica</span>
+                            <div class="input-group-prepend">
+                                <select class="input-group-text form-select" id="_773_ind1" v-model="record._773_ind1">
+                                    <option disabled>Controle de nota</option>
+                                    <option value="0">0 - Exibir nota</option>
+                                    <option value="1">1 - Não exibir nota</option>
+                                </select>
+                            </div>
+                            <input type="text" id="titulo" v-model="record._773t" class="form-control" placeholder="Título" aria-label="Título" aria-describedby="titulo">
+                            <input type="text" id="volume" v-model="record._773hv" class="form-control" placeholder="Volume" aria-label="Volume" aria-describedby="volume">
+                            <input type="text" id="fasciculo" v-model="record._773hn" class="form-control" placeholder="Fascículo" aria-label="Fascículo" aria-describedby="fasciculo">
+                            <input type="text" id="paginacao" v-model="record._773hp" class="form-control" placeholder="Páginação" aria-label="Paginação" aria-describedby="paginacao">
+                            <input type="text" id="issn" v-model="record._773hx" class="form-control" placeholder="ISSN" aria-label="ISSN" aria-describedby="issn">
+                        </div>
+                        <!-- \773 -->
                         <!-- 856 -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="title">Acesso e localização eletrônica</span>
@@ -1932,11 +1949,11 @@
                     type_of_record: 'a',
                     bibliographic_level: 'm',
                     type_of_control: '^',
-                    character_coding_scheme: "a",
+                    character_coding_scheme: 'a',
                     base_address_of_data:'00000', 
-                    encoding_level: "I",
-                    descriptive_cataloging_form: "a",
-                    multipart_resource_record_level: "#"
+                    encoding_level: 'I',
+                    descriptive_cataloging_form: 'a',
+                    multipart_resource_record_level: '^'
                 },
                 f008:{
                     p00_05: '^^^^^^',
@@ -1992,6 +2009,12 @@
                     _300b: null,
                     _300c: null,
                     _310a: null,
+                    _773_ind1: '0',
+                    _773t: null,
+                    _773hn: null,
+                    _773hp: null,
+                    _773hv: null,
+                    _773hx: null,
                     _856_ind1: '4',
                     _856_ind2: '0',
                     _856u: null,
@@ -2036,14 +2059,17 @@
                     (this.record._300b ? '$b' + this.record._300b : '') + (this.record._300c ? '$c' + this.record._300c : '') +
                     (this.record._310a ? '\n=310 ##$a' + this.record._310a : '') + this.record.personal_names_array.join("") +
                     (this.record.doi ? '\n000000001 500   L $$aDisponível em: https://doi.org/' + this.record.doi + '. Acesso em: ' : '') +
-                    '\n000000001 650 7 L $$a'  + 
-                    '\n000000001 650 7 L $$a'  + 
-                    '\n000000001 650 7 L $$a'  + 
-                    '\n000000001 650 7 L $$a'  + 
+                    '\n000000001 650 7 L $$a' + 
+                    '\n000000001 650 7 L $$a' + 
+                    '\n000000001 650 7 L $$a' + 
+                    '\n000000001 650 7 L $$a' + 
+                    '\n000000001 773' + this.record._773_ind1 + '  L $$t' + (this.record._773t ? this.record._773t : '') + '$$hv.' + (this.record._773hv ? this.record._773hv : '') + ', n.' + (this.record._773hn ? this.record._773hn : '') + ', p.' + (this.record._773hp ? this.record._773hp : '') + ', ' + (this.record._260c ? this.record._260c : '') + '$$x' + (this.record._773hx ? this.record._773hx : '') +
                     (this.record.doi ? '\n000000001 8564  L $$zClicar sobre o botão para acesso ao texto completo$$uhttps://doi.org/' + this.record.doi + '$$3DOI' : '') +
                     (this.record._856u ? '\n000000001 856'+ this.record._856_ind1 + this.record._856_ind2 + ' L $$u' + this.record._856u + '' : '') +
                     '\n000000001 945   L $$aP' +
-                    '\n000000001 946   L $$a'
+                    '\n000000001 946   L $$a' +
+                    '\n000000001 960   L $$a' +
+                    '\n000000001 961   L $$a' 
 
 
                 }
@@ -2078,9 +2104,14 @@
                         this.crossrefRecord = response,
                         this.record.title = this.crossrefRecord.data.message.title,
                         this.record._856u = this.crossrefRecord.data.message.URL,
+                        this.record._773t = this.crossrefRecord.data.message['container-title'][0],
+                        this.record._773hn = this.crossrefRecord.data.message.issue,
+                        this.record._773hv = this.crossrefRecord.data.message.volume,
+                        this.record._773hp = this.crossrefRecord.data.message.page,
+                        this.record._773hx = this.crossrefRecord.data.message.ISSN[0],
                         this.record._260b = this.crossrefRecord.data.message.publisher,
                         this.record._260c = this.crossrefRecord.data.message.issued['date-parts'][0][0],
-                        this.f008.p07_10 = this.crossrefRecord.data.message.issued['date-parts'][0][0]
+                        this.f008.p07_10 = this.crossrefRecord.data.message.issued['date-parts'][0][0]                        
                         Object.values(this.crossrefRecord.data.message.author).forEach(val => {
                             this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given });
                         });
