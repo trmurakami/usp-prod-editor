@@ -15,7 +15,7 @@
     <!-- Bootstrap-select - Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css">
 
-    <title>Online MARC Editor</title>
+    <title>Editor ALEPHSEQ para a Produção Científica USP</title>
   </head>
   <body>
 
@@ -29,9 +29,10 @@
                     </header>
 
                     <div class="p-5 pt-2 pb-2">
-                        <h5>Predefined: 
-                        <button type="button" class="btn btn-primary" @click="recordType='Book';ldr.bibliographic_level='m';ldr.type_of_record='a';f008.p19='#';f008.p21='#';f008.p33='0';f008.p34='#'">Book</button>
-                        <button type="button" class="btn btn-info" @click="recordType='Serial';ldr.bibliographic_level='s';ldr.type_of_record='a';f008.p19='r';f008.p21='p';f008.p33='#';f008.p34='0'">Serial</button>
+                        <h5>Predefinido: 
+                        <button type="button" class="btn btn-warning" @click="recordType='Book';ldr.bibliographic_level='m';ldr.type_of_record='a';f008.p19='#';f008.p21='#';f008.p33='0';f008.p34='#'">Produção científica</button>
+                        <button type="button" class="btn btn-primary" @click="recordType='Book';ldr.bibliographic_level='m';ldr.type_of_record='a';f008.p19='#';f008.p21='#';f008.p33='0';f008.p34='#'">Livro</button>
+                        <button type="button" class="btn btn-info" @click="recordType='Serial';ldr.bibliographic_level='s';ldr.type_of_record='a';f008.p19='r';f008.p21='p';f008.p33='#';f008.p34='0'">Periódico</button>
                         <!-- <button type="button" class="btn btn-success" @click="recordType='Musical Score';ldr.bibliographic_level='m';ldr.type_of_record='c'">Musical Score</button> -->
                         </h5>
                     </div>
@@ -1772,28 +1773,6 @@
 
                         <br/><br/>
 
-                        <!-- 001 -->
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="_001">Control Number</span>
-                            <input type="text" id="_001" v-model="record._001" class="form-control" placeholder="Control Number" aria-label="Control Number" aria-describedby="_001">
-                        </div>
-                        <!-- \001 -->
-
-                        <!-- 003 -->
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="_003">Control Number Identifier</span>
-                            <input type="text" id="_003" v-model="record._003" class="form-control" placeholder="Control Number Identifier" aria-label="Control Number Identifier" aria-describedby="_003">
-                        </div>
-                        <!-- \003 -->
-
-                        <!-- 040 -->
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="_040">Cataloging Source</span>
-                            <input type="text" id="_040a" v-model="record._040a" class="form-control" placeholder="Original cataloging agency" aria-label="Original cataloging agency" aria-describedby="_040a">
-                            <input type="text" id="_040c" v-model="record._040c" class="form-control" placeholder="Transcribing agency" aria-label="Transcribing agency" aria-describedby="_040c">
-                        </div>
-                        <!-- \040 -->
-
                         <!-- 100 -->
                         <template>
                             <div class="input-group mb-2" v-for="(author, indexAuthor) in record.personal_name">
@@ -2044,19 +2023,18 @@
                     }                    
                     this.i_personal_name = 1;            
 
-                    return '\n=LDR  ' + this.ldr.record_length + this.ldr.record_status + this.ldr.type_of_record + this.ldr.bibliographic_level + this.ldr.type_of_control + 
+                    return '\n000000001 FMT   L BK' +
+                    '\n000000001 LDR   L ' + this.ldr.record_length + this.ldr.record_status + this.ldr.type_of_record + this.ldr.bibliographic_level + this.ldr.type_of_control + 
                     this.ldr.character_coding_scheme + '22' + this.ldr.base_address_of_data + this.ldr.encoding_level + this.ldr.descriptive_cataloging_form + 
                     this.ldr.multipart_resource_record_level + '4500' +
-                    '\n=001  ' + this.record._001 +
-                    '\n=003  ' + this.record._003 +
-                    '\n=005  ' + this.record._005 +
-                    '\n=008  ' + this.f008.p00_05 + this.f008.p06 + this.f008.p07_10 + this.f008.p11_14 + this.f008.p15_17 + this.f008.p18 + this.f008.p19 + 
+                    '\n000000001 BAS   L $$a04' +
+                    '\n000000001 008   L ' + this.f008.p00_05 + this.f008.p06 + this.f008.p07_10 + this.f008.p11_14 + this.f008.p15_17 + this.f008.p18 + this.f008.p19 + 
                     this.f008.p20 + this.f008.p21 + this.f008.p22 + this.f008.p23 +
                     this.f008.p24 + this.f008.p25 + this.f008.p26 + this.f008.p27 + this.f008.p28 + this.f008.p29 + this.f008.p30 + this.f008.p31 + this.f008.p32 +
                     this.f008.p33 + this.f008.p34 +  this.f008.p35_37 + this.f008.p38 + this.f008.p39 +
                     (this.record.isbn ? '\n=020  ##$a' + this.record.isbn : '') +
-                    (this.record.doi ? '\n=024  70$a' + this.record.doi + '$2doi': '') +
-                    '\n=040  ##$a' + this.record._040a + '$c' + this.record._040c +
+                    (this.record.doi ? '\n000000001 0247  L $$a' + this.record.doi + '$$2doi': '') +
+                    '\n000000001 040   L $$aUSP/AGUIA' +
                     (this.record.personal_name[0] ? '\n=100  ' + this.record.personal_name[0].ind1 + '#$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$q' + this.record.personal_name[0].q : '') : '') +
                     '\n=245  ' + this.record._245_ind1 + this.record._245_ind2 + '$a' + this.record.title +
                     (this.record.subtitle ? '$b' + this.record.subtitle : '') +
