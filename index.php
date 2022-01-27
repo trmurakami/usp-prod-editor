@@ -1878,6 +1878,16 @@
                             <textarea type="textarea" id="resumo" v-model="record._520a" class="form-control" placeholder="Resumo" aria-label="Resumo" aria-describedby="resumo"></textarea>
                         </div>
                         <!-- \520 -->
+
+                        <!-- 650 -->
+                        <div class="input-group mb-2" v-for="(subjectTT, indexSubjectTT) in record._650">
+                            <span class="input-group-text" id="title">Assunto - Termo tópico</span>
+                            <input type="text" id="_650a" v-model="record._650[indexSubjectTT].a" class="form-control" placeholder="Termo tópico" aria-label="Termo tópico" aria-describedby="_650a">
+                            <button @click="deleteField('_650', indexSubjectTT)" class="btn btn-danger btn-sm">Excluir</button>
+                        </div>
+                        <button @click="addField('_650')" class="btn btn-info btn-sm mb-2">Adicionar Assunto - Termo tópico</button>
+                        <!-- \650 -->
+
                         <!-- 773 -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="analitica">Analítica</span>
@@ -2035,6 +2045,7 @@
                     general_note: [],
                     general_note_array: [],
                     _520a: null,
+                    _650: [],
                     _773_ind1: '0',
                     _773t: null,
                     _773hn: null,
@@ -2067,6 +2078,11 @@
                         this.record.general_note_array.push('\n000000001 500   L $$a' + this.record.general_note[this.i_general_note].a);
                     }
 
+                    this.record._650_array = [];
+                    for (this.i_650 = 0; this.i_650 < this.record._650.length; this.i_650++) {
+                        this.record._650_array.push('\n000000001 650 7 L $$a' + this.record._650[this.i_650].a);
+                    }
+
                     return '\n000000001 FMT   L BK' +
                     '\n000000001 LDR   L ' + this.ldr.record_length + this.ldr.record_status + this.ldr.type_of_record + this.ldr.bibliographic_level + this.ldr.type_of_control + 
                     this.ldr.character_coding_scheme + '22' + this.ldr.base_address_of_data + this.ldr.encoding_level + this.ldr.descriptive_cataloging_form + 
@@ -2093,10 +2109,7 @@
                     this.record.general_note_array.join("") +
                     (this.record.doi ? '\n000000001 500   L $$aDisponível em: https://doi.org/' + this.record.doi + '. Acesso em: ' : '') +
                     (this.record._520a ? '\n000000001 520   L $$a' + this.record._520a : '') +
-                    '\n000000001 650 7 L $$a' + 
-                    '\n000000001 650 7 L $$a' + 
-                    '\n000000001 650 7 L $$a' + 
-                    '\n000000001 650 7 L $$a' + 
+                    this.record._650_array.join("") +
                     '\n000000001 773' + this.record._773_ind1 + '  L $$t' + (this.record._773t ? this.record._773t : '') + '$$hv.' + (this.record._773hv ? this.record._773hv : '') + ', n.' + (this.record._773hn ? this.record._773hn : '') + ', p.' + (this.record._773hp ? this.record._773hp : '') + ', ' + (this.record._260c ? this.record._260c : '') + '$$x' + (this.record._773hx ? this.record._773hx : '') +
                     (this.record.doi ? '\n000000001 8564  L $$zClicar sobre o botão para acesso ao texto completo$$uhttps://doi.org/' + this.record.doi + '$$3DOI' : '') +
                     (this.record._856u ? '\n000000001 856'+ this.record._856_ind1 + this.record._856_ind2 + ' L $$u' + this.record._856u + '' : '') +
@@ -2120,11 +2133,9 @@
                         case "personal_name":
                             this.record[field].push({ ind1: "1", a: "", d: null, q: null });
                             break;
+                        case "_650":
                         case "general_note":
                             this.record[field].push({ a: ""});
-                            break;
-                        case "Bananas":
-                            console.log("Bananas custam $0.48 o quilo.");
                             break;
                         case "Cerejas":
                             console.log("Cerejas custam $3.00 o quilo.");
