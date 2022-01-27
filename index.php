@@ -1665,7 +1665,7 @@
                         <!-- DOI -->
                         <div v-show="doiShow" class="alert alert-warning alert-dismissible fade show" role="alert">
                             <div class="alert alert-warning" role="alert" v-if="loadingDOI">
-                                Getting DOI data from CrossRef ...
+                                Getting DOI data ...
                             </div>
                             <div class="m-3">
                                 <label for="doi" class="form-label">DOI</label>
@@ -1677,7 +1677,8 @@
                                 name="doi"
                                 placeholder="DOI"
                                 />
-                                <button class="btn btn-info btn-sm m-2" @click="getDOI(record.doi), loadingDOI = true">Retrieve DOI data from CrossRef</button>
+                                <button class="btn btn-info btn-sm m-2" @click="getDOICrossRef(record.doi), loadingDOI = true">Buscar DOI na CrossRef</button>
+                                <button class="btn btn-info btn-sm m-2" @click="getDOIOpenAlex(record.doi), loadingDOI = true">Buscar DOI na OpenAlex</button>
                             </div>
                         </div>
                         <!-- /DOI -->
@@ -1789,6 +1790,7 @@
                                 <input type="text" id="_100a" v-model="record.personal_name[indexAuthor].a" class="form-control" placeholder="Personal name" aria-label="Personal name" aria-describedby="_100a">
                                 <input type="text" id="_100d" v-model="record.personal_name[indexAuthor].d" class="form-control" placeholder="Dates associated with a name" aria-label="Dates associated with a name" aria-describedby="_100d">
                                 <input type="text" id="_100q" v-model="record.personal_name[indexAuthor].q" class="form-control" placeholder="Fuller form of name" aria-label="Fuller form of name" aria-describedby="_100q">
+                                <input type="text" id="_1000" v-model="record.personal_name[indexAuthor]._0" class="form-control" placeholder="ORCID ID" aria-label="ORCID ID" aria-describedby="_1000">
                                 <button @click="deleteField('personal_name', indexAuthor)" class="btn btn-danger btn-sm">Delete</button>
                             </div>
 
@@ -1989,6 +1991,7 @@
                     p39: 'd'
                 },
                 crossrefRecord: null,
+                openAlexRecord: null,
                 ISBNRecord: null,
                 Z3950Records: null,
                 recordType: 'Book',
@@ -2057,7 +2060,7 @@
                     '\n000000001 040   L $$aUSP/AGUIA' +
                     '\n000000001 0410  L $$a' + this.f008.p35_37 +
                     '\n000000001 044   L $$a' + this.f008.p15_17.replace('^', '')  +
-                    (this.record.personal_name[0] ? '\n000000001 100' + this.record.personal_name[0].ind1 + '  L $$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$q' + this.record.personal_name[0].q : '') : '') +
+                    (this.record.personal_name[0] ? '\n000000001 100' + this.record.personal_name[0].ind1 + '  L $$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$$q' + this.record.personal_name[0].q : '') + (this.record.personal_name[0]._0 ? '$$0' + this.record.personal_name[0]._0 : '') : '') +
                     '\n000000001 245' + this.record._245_ind1 + this.record._245_ind2 + ' L $$a' + this.record.title +
                     (this.record.subtitle ? '$$b' + this.record.subtitle : '') +
                     '\n000000001 260   L ' + (this.record._260a ? '$$a' + this.record._260a : '') + 
@@ -2106,7 +2109,7 @@
                 deleteField: function (field, index) {
                     this.record[field].splice(index, 1);
                 },
-                getDOI(doi) {
+                getDOICrossRef(doi) {
                     axios
                         .get("https://api.crossref.org/works/" + doi)
                         .then((response) => {
@@ -2123,11 +2126,40 @@
                         this.record._260c = this.crossrefRecord.data.message.issued['date-parts'][0][0],
                         this.f008.p07_10 = this.crossrefRecord.data.message.issued['date-parts'][0][0]                        
                         Object.values(this.crossrefRecord.data.message.author).forEach(val => {
-                            this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given });
+                            this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given, _0: val.ORCID });
                         });
                         if (this.crossrefRecord.data.message.ISBN) {
                             this.record.isbn = this.crossrefRecord.data.message.ISBN[0]
                         }
+                        })
+                        .catch(function (error) {
+                        console.log(error);
+                        this.errored = true;
+                        })
+                        .finally(() => (this.loadingDOI = false));
+                },
+                getDOIOpenAlex(doi) {
+                    axios
+                        .get("https://api.openalex.org/works/https://doi.org/" + doi)
+                        .then((response) => {
+                        this.openAlexRecord = response,
+                        this.record.title = this.openAlexRecord.data.title,
+                        // this.record._856u = this.crossrefRecord.data.message.URL,
+                        this.record._773t = this.openAlexRecord.data.host_venue.display_name,
+                        this.record._773hn = this.openAlexRecord.data.biblio.issue,
+                        this.record._773hv = this.openAlexRecord.data.biblio.volume,
+                        this.record._773hp = this.openAlexRecord.data.biblio.first_page + ' - ' + this.openAlexRecord.data.biblio.last_page,
+                        this.record._773hx = this.openAlexRecord.data.host_venue.issn_l,
+                        this.record._260b = this.openAlexRecord.data.host_venue.publisher,
+                        // this.record._520a = this.crossrefRecord.data.message.abstract,
+                        this.record._260c = this.openAlexRecord.data.publication_year,
+                        this.f008.p07_10 = this.openAlexRecord.data.publication_year
+                        // Object.values(this.crossrefRecord.data.message.author).forEach(val => {
+                        //     this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given });
+                        // });
+                        // if (this.crossrefRecord.data.message.ISBN) {
+                        //     this.record.isbn = this.crossrefRecord.data.message.ISBN[0]
+                        // }
                         })
                         .catch(function (error) {
                         console.log(error);
