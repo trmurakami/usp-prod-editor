@@ -1800,9 +1800,7 @@
                                 <button @click="deleteField('personal_name', indexAuthor)" class="btn btn-danger btn-sm">Excluir</button>
                             </div>
 
-                            <button @click="addField('personal_name')" class="btn btn-info btn-sm mb-2">
-                            Adicionar Nome Pessoal
-                            </button>
+                            <button @click="addField('personal_name')" class="btn btn-info btn-sm mb-2">Adicionar Nome Pessoal</button>
                         </template>
                         <!-- \100 -->
 
@@ -1863,6 +1861,17 @@
                             <input type="text" id="_310a" v-model="record._310a" class="form-control" placeholder="Current publication frequency" aria-label="Current publication frequency" aria-describedby="_310a">
                         </div>
                         <!-- \310 -->
+                        <!-- 500 -->
+
+                        <div class="input-group mb-2" v-for="(note, indexNote) in record.general_note">
+                            <span class="input-group-text" id="title">Nota geral</span>
+                            <input type="text" id="_500a" v-model="record.general_note[indexNote].a" class="form-control" placeholder="Nota geral" aria-label="Nota geral" aria-describedby="_500a">
+                            <button @click="deleteField('general_note', indexNote)" class="btn btn-danger btn-sm">Excluir</button>
+                        </div>
+
+                        <button @click="addField('general_note')" class="btn btn-info btn-sm mb-2">Adicionar Nota geral</button>
+
+                        <!-- \500 -->
                         <!-- 520 -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="title">Resumo</span>
@@ -2023,6 +2032,8 @@
                     _300b: null,
                     _300c: null,
                     _310a: null,
+                    general_note: [],
+                    general_note_array: [],
                     _520a: null,
                     _773_ind1: '0',
                     _773t: null,
@@ -2049,7 +2060,12 @@
                     for (this.i_personal_name = 1; this.i_personal_name < this.record.personal_name.length; this.i_personal_name++) {
                         this.record.personal_names_array.push('\n=700  ' + this.record.personal_name[this.i_personal_name].ind1 + '#$a' + this.record.personal_name[this.i_personal_name].a + (this.record.personal_name[this.i_personal_name].d ? '$d' + this.record.personal_name[this.i_personal_name].d : '') + (this.record.personal_name[this.i_personal_name].q ? '$q' + this.record.personal_name[this.i_personal_name].q : ''));
                     }                    
-                    this.i_personal_name = 1;            
+                    this.i_personal_name = 1;
+
+                    this.record.general_note_array = [];
+                    for (this.i_general_note = 0; this.i_general_note < this.record.general_note.length; this.i_general_note++) {
+                        this.record.general_note_array.push('\n000000001 500   L $$a' + this.record.general_note[this.i_general_note].a);
+                    }
 
                     return '\n000000001 FMT   L BK' +
                     '\n000000001 LDR   L ' + this.ldr.record_length + this.ldr.record_status + this.ldr.type_of_record + this.ldr.bibliographic_level + this.ldr.type_of_control + 
@@ -2074,6 +2090,7 @@
                     (this.record._300b ? '$b' + this.record._300b : '') + (this.record._300c ? '$c' + this.record._300c : '') +
                     (this.record._310a ? '\n000000001 310   L $$a' + this.record._310a : '') + 
                     this.record.personal_names_array.join("") +
+                    this.record.general_note_array.join("") +
                     (this.record.doi ? '\n000000001 500   L $$aDisponível em: https://doi.org/' + this.record.doi + '. Acesso em: ' : '') +
                     (this.record._520a ? '\n000000001 520   L $$a' + this.record._520a : '') +
                     '\n000000001 650 7 L $$a' + 
@@ -2099,7 +2116,26 @@
                     if (this.record[field] === null) {
                         this.record[field] = [];
                     }
-                    this.record[field].push({ ind1: "1", a: "", d: null, q: null });
+                    switch (field) {
+                        case "personal_name":
+                            this.record[field].push({ ind1: "1", a: "", d: null, q: null });
+                            break;
+                        case "general_note":
+                            this.record[field].push({ a: ""});
+                            break;
+                        case "Bananas":
+                            console.log("Bananas custam $0.48 o quilo.");
+                            break;
+                        case "Cerejas":
+                            console.log("Cerejas custam $3.00 o quilo.");
+                            break;
+                        case "Mangas":
+                        case "Mamões":
+                            console.log("Mangas e mamões custam $2.79 o quilo.");
+                            break;
+                        default:
+                        this.record[field].push({ a: ""});
+                    }
                 },
                 copyTestingCode () {
                     try {
