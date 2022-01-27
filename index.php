@@ -2193,6 +2193,17 @@
                         Object.values(this.crossrefRecord.data.message.author).forEach(val => {
                             this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given, _0: val.ORCID, _8: val.affiliation[0].name });
                         });
+                        Object.values(this.crossrefRecord.data.message.subject).forEach(val => {
+                            this.record._650.push({ a: val });
+                        });
+                        Object.values(this.crossrefRecord.data.message.funder).forEach(val => {
+                            if (val.award) {
+                                this.record._536.push({ a: val.name, f: val.award.join(" - ") });
+                            } else {
+                                this.record._536.push({ a: val.name });
+                            }
+                            
+                        });
                         if (this.crossrefRecord.data.message.ISBN) {
                             this.record.isbn = this.crossrefRecord.data.message.ISBN[0]
                         }
