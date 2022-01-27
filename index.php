@@ -1778,18 +1778,18 @@
                         <template>
                             <div class="input-group mb-2" v-for="(author, indexAuthor) in record.personal_name">
 
-                                <span class="input-group-text" id="title">Personal Name</span>
+                                <span class="input-group-text" id="title">Nome pessoal</span>
                                 <div class="input-group-prepend">
                                     <select class="input-group-text form-select" id="_100_ind1" v-model="record.personal_name[indexAuthor].ind1">
-                                        <option disabled>Type of personal name entry element</option>
-                                        <option value="0">0 - Forename</option>
-                                        <option value="1">1 - Surname</option>
-                                        <option value="3">3 - Family name</option>
+                                        <option disabled>Forma de entrada do nome pessoal</option>
+                                        <option value="0">0 - Nome</option>
+                                        <option value="1">1 - Sobrenome</option>
+                                        <option value="3">3 - Nome de família</option>
                                     </select>
                                 </div>
-                                <input type="text" id="_100a" v-model="record.personal_name[indexAuthor].a" class="form-control" placeholder="Personal name" aria-label="Personal name" aria-describedby="_100a">
-                                <input type="text" id="_100d" v-model="record.personal_name[indexAuthor].d" class="form-control" placeholder="Dates associated with a name" aria-label="Dates associated with a name" aria-describedby="_100d">
-                                <input type="text" id="_100q" v-model="record.personal_name[indexAuthor].q" class="form-control" placeholder="Fuller form of name" aria-label="Fuller form of name" aria-describedby="_100q">
+                                <input type="text" id="_100a" v-model="record.personal_name[indexAuthor].a" class="form-control" placeholder="Nome pessoal" aria-label="Nome pessoal" aria-describedby="_100a">
+                                <input type="text" id="_100d" v-model="record.personal_name[indexAuthor].d" class="form-control" placeholder="Datas associadas ao nome" aria-label="Datas associadas ao nome" aria-describedby="_100d">
+                                <input type="text" id="_100q" v-model="record.personal_name[indexAuthor].q" class="form-control" placeholder="Forma completa do nome" aria-label="Forma completa do nome" aria-describedby="_100q">
                                 <input type="text" id="_1000" v-model="record.personal_name[indexAuthor]._0" class="form-control" placeholder="ORCID ID" aria-label="ORCID ID" aria-describedby="_1000">
                                 <select class="input-group-text form-select" id="record.personal_name[indexAuthor]._5" v-model="record.personal_name[indexAuthor]._5" v-if="record.personal_name[indexAuthor]._8">
                                         <option disabled>Instituição de origem</option>
@@ -1797,7 +1797,7 @@
                                         <option value="INT">INT</option>
                                     </select>
                                 <input type="text" id="_1008" v-model="record.personal_name[indexAuthor]._8" class="form-control" placeholder="Afiliação" aria-label="Afiliação" aria-describedby="_1008">
-                                <button @click="deleteField('personal_name', indexAuthor)" class="btn btn-danger btn-sm">Delete</button>
+                                <button @click="deleteField('personal_name', indexAuthor)" class="btn btn-danger btn-sm">Excluir</button>
                             </div>
 
                             <button @click="addField('personal_name')" class="btn btn-info btn-sm mb-2">
