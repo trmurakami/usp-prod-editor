@@ -2207,6 +2207,11 @@
                         if (this.crossrefRecord.data.message.ISBN) {
                             this.record.isbn = this.crossrefRecord.data.message.ISBN[0]
                         }
+                        switch (this.crossrefRecord.data.message.language) {
+                            case "en":
+                                this.f008.p35_37 = 'eng';
+                                break;
+                            }
                         })
                         .catch(function (error) {
                         console.log(error);
