@@ -1791,6 +1791,12 @@
                                 <input type="text" id="_100d" v-model="record.personal_name[indexAuthor].d" class="form-control" placeholder="Dates associated with a name" aria-label="Dates associated with a name" aria-describedby="_100d">
                                 <input type="text" id="_100q" v-model="record.personal_name[indexAuthor].q" class="form-control" placeholder="Fuller form of name" aria-label="Fuller form of name" aria-describedby="_100q">
                                 <input type="text" id="_1000" v-model="record.personal_name[indexAuthor]._0" class="form-control" placeholder="ORCID ID" aria-label="ORCID ID" aria-describedby="_1000">
+                                <select class="input-group-text form-select" id="record.personal_name[indexAuthor]._5" v-model="record.personal_name[indexAuthor]._5" v-if="record.personal_name[indexAuthor]._8">
+                                        <option disabled>Instituição de origem</option>
+                                        <option value="NAC">NAC</option>
+                                        <option value="INT">INT</option>
+                                    </select>
+                                <input type="text" id="_1008" v-model="record.personal_name[indexAuthor]._8" class="form-control" placeholder="Afiliação" aria-label="Afiliação" aria-describedby="_1008">
                                 <button @click="deleteField('personal_name', indexAuthor)" class="btn btn-danger btn-sm">Delete</button>
                             </div>
 
@@ -1799,7 +1805,6 @@
                             </button>
                         </template>
                         <!-- \100 -->
-
 
                         <!-- TITLE -->
                         <div class="input-group mb-3">
@@ -2060,7 +2065,7 @@
                     '\n000000001 040   L $$aUSP/AGUIA' +
                     '\n000000001 0410  L $$a' + this.f008.p35_37 +
                     '\n000000001 044   L $$a' + this.f008.p15_17.replace('^', '')  +
-                    (this.record.personal_name[0] ? '\n000000001 100' + this.record.personal_name[0].ind1 + '  L $$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$$q' + this.record.personal_name[0].q : '') + (this.record.personal_name[0]._0 ? '$$0' + this.record.personal_name[0]._0 : '') : '') +
+                    (this.record.personal_name[0] ? '\n000000001 100' + this.record.personal_name[0].ind1 + '  L $$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$$q' + this.record.personal_name[0].q : '') + (this.record.personal_name[0]._0 ? '$$0' + this.record.personal_name[0]._0 : '') + (this.record.personal_name[0]._8 ? '$$5' + this.record.personal_name[0]._5 : '') + (this.record.personal_name[0]._8 ? '$$8' + this.record.personal_name[0]._8 : '') : '') +
                     '\n000000001 245' + this.record._245_ind1 + this.record._245_ind2 + ' L $$a' + this.record.title +
                     (this.record.subtitle ? '$$b' + this.record.subtitle : '') +
                     '\n000000001 260   L ' + (this.record._260a ? '$$a' + this.record._260a : '') + 
@@ -2126,7 +2131,7 @@
                         this.record._260c = this.crossrefRecord.data.message.issued['date-parts'][0][0],
                         this.f008.p07_10 = this.crossrefRecord.data.message.issued['date-parts'][0][0]                        
                         Object.values(this.crossrefRecord.data.message.author).forEach(val => {
-                            this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given, _0: val.ORCID });
+                            this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given, _0: val.ORCID, _8: val.affiliation[0].name });
                         });
                         if (this.crossrefRecord.data.message.ISBN) {
                             this.record.isbn = this.crossrefRecord.data.message.ISBN[0]
