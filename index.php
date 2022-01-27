@@ -1879,6 +1879,16 @@
                         </div>
                         <!-- \520 -->
 
+                        <!-- 536 -->
+                        <div class="input-group mb-2" v-for="(funder, indexFunder) in record._536">
+                            <span class="input-group-text" id="title">Nota de informação sobre financiamento</span>
+                            <input type="text" id="_536a" v-model="record._536[indexFunder].a" class="form-control" placeholder="Texto da nota" aria-label="Texto da nota" aria-describedby="_536a">
+                            <input type="text" id="_536f" v-model="record._536[indexFunder].f" class="form-control" placeholder="Número da projeto" aria-label="Número da projeto" aria-describedby="_536f">
+                            <button @click="deleteField('_536', indexFunder)" class="btn btn-danger btn-sm">Excluir</button>
+                        </div>
+                        <button @click="addField('_536')" class="btn btn-info btn-sm mb-2">Adicionar Nota de informação sobre financiamento</button>
+                        <!-- \536 -->
+
                         <!-- 650 -->
                         <div class="input-group mb-2" v-for="(subjectTT, indexSubjectTT) in record._650">
                             <span class="input-group-text" id="title">Assunto - Termo tópico</span>
@@ -2045,6 +2055,7 @@
                     general_note: [],
                     general_note_array: [],
                     _520a: null,
+                    _536: [],
                     _650: [],
                     _773_ind1: '0',
                     _773t: null,
@@ -2078,6 +2089,11 @@
                         this.record.general_note_array.push('\n000000001 500   L $$a' + this.record.general_note[this.i_general_note].a);
                     }
 
+                    this.record._536_array = [];
+                    for (this.i_536 = 0; this.i_536 < this.record._536.length; this.i_536++) {
+                        this.record._536_array.push('\n000000001 536   L $$a' + this.record._536[this.i_536].a + '$$f' + this.record._536[this.i_536].f);
+                    }
+
                     this.record._650_array = [];
                     for (this.i_650 = 0; this.i_650 < this.record._650.length; this.i_650++) {
                         this.record._650_array.push('\n000000001 650 7 L $$a' + this.record._650[this.i_650].a);
@@ -2107,6 +2123,7 @@
                     (this.record._310a ? '\n000000001 310   L $$a' + this.record._310a : '') + 
                     this.record.personal_names_array.join("") +
                     this.record.general_note_array.join("") +
+                    this.record._536_array.join("") +
                     (this.record.doi ? '\n000000001 500   L $$aDisponível em: https://doi.org/' + this.record.doi + '. Acesso em: ' : '') +
                     (this.record._520a ? '\n000000001 520   L $$a' + this.record._520a : '') +
                     this.record._650_array.join("") +
@@ -2137,12 +2154,8 @@
                         case "general_note":
                             this.record[field].push({ a: ""});
                             break;
-                        case "Cerejas":
-                            console.log("Cerejas custam $3.00 o quilo.");
-                            break;
-                        case "Mangas":
-                        case "Mamões":
-                            console.log("Mangas e mamões custam $2.79 o quilo.");
+                        case "_536":
+                            this.record[field].push({ a: "", f: ""});
                             break;
                         default:
                         this.record[field].push({ a: ""});
