@@ -30,7 +30,7 @@
 
                     <div class="p-5 pt-2 pb-2">
                         <h5>Predefinido: 
-                        <button type="button" class="btn btn-warning" @click="recordType='Book';ldr.bibliographic_level='m';ldr.type_of_record='a';f008.p19='#';f008.p21='#';f008.p33='0';f008.p34='#'">Produção científica</button>
+                        <button type="button" class="btn btn-warning" @click="recordType='Book';record.ldr.bibliographic_level='m';record.ldr.type_of_record='a';record.f008.p19='#';record.f008.p21='#';record.f008.p33='0';record.f008.p34='#'">Produção científica</button>
                         <!-- <button type="button" class="btn btn-primary" @click="recordType='Book';ldr.bibliographic_level='m';ldr.type_of_record='a';f008.p19='#';f008.p21='#';f008.p33='0';f008.p34='#'">Livro</button> -->
                         <!-- <button type="button" class="btn btn-info" @click="recordType='Serial';ldr.bibliographic_level='s';ldr.type_of_record='a';f008.p19='r';f008.p21='p';f008.p33='#';f008.p34='0'">Periódico</button> -->
                         <!-- <button type="button" class="btn btn-success" @click="recordType='Musical Score';ldr.bibliographic_level='m';ldr.type_of_record='c'">Musical Score</button> -->
@@ -49,7 +49,7 @@
                         <div v-show="f008Show" class="alert alert-warning alert-dismissible fade show" role="alert">
 
                             <label for="record_status">06 - Type of date/Publication status</label>
-                            <select class="form-select" aria-label="Record status" id="record_status" v-model="f008.p06">
+                            <select class="form-select" aria-label="Record status" id="record_status" v-model="record.f008.p06">
                                 <option value="b">b - No dates given; B.C. date involved</option>
                                 <option value="c">c - Continuing resource currently published</option>
                                 <option value="d">d - Continuing resource ceased publication</option>
@@ -68,13 +68,13 @@
                             </select>
 
                             <label for="008_07_10">07-10 - Date 1</label>
-                            <input type="text" id="008_07_10" v-model="f008.p07_10" class="form-control" aria-label="008_07_10" aria-describedby="008_07_10" maxlength="4">
+                            <input type="text" id="008_07_10" v-model="record.f008.p07_10" class="form-control" aria-label="008_07_10" aria-describedby="008_07_10" maxlength="4">
 
                             <label for="008_11_14">11-14 - Date 2</label>
-                            <input type="text" id="008_11_14" v-model="f008.p11_14" class="form-control" aria-label="008_11_14" aria-describedby="008_11_14" maxlength="4">
+                            <input type="text" id="008_11_14" v-model="record.f008.p11_14" class="form-control" aria-label="008_11_14" aria-describedby="008_11_14" maxlength="4">
 
                             <label for="008_15_17">15-17 - Place of publication, production, or execution</label>
-                            <select class="form-select selectpicker" aria-label="Place of publication" id="008_15_17" v-model="f008.p15_17" data-live-search="true">
+                            <select class="form-select selectpicker" aria-label="Place of publication" id="008_15_17" v-model="record.f008.p15_17" data-live-search="true">
                             <option value="xx^">xx^ - No place, unknown, or undetermined</option>
                                 <option value="vp^">vp^ - Various places</option>
                                 <option value="bl^">bl^ - Brazil</option>
@@ -465,7 +465,7 @@
                             <br/>
                             <template v-if="recordType === 'Book'">
                                 <label for="p18">18 - Illustrations (006/01-04)</label>
-                                <select class="form-select" aria-label="Illustrations" id="p18" v-model="f008.p18">
+                                <select class="form-select" aria-label="Illustrations" id="p18" v-model="record.f008.p18">
                                     <option value="^">^ - No illustrations</option>
                                     <option value="a">a - Illustrations</option>
                                     <option value="b">b - Maps</option>
@@ -486,7 +486,7 @@
                                 </select>
                             
                                 <label for="p19">19 - Illustrations (006/01-04)</label>
-                                <select class="form-select" aria-label="Illustrations" id="p19" v-model="f008.p19">
+                                <select class="form-select" aria-label="Illustrations" id="p19" v-model="record.f008.p19">
                                     <option value="^">^ - No illustrations</option>
                                     <option value="a">a - Illustrations</option>
                                     <option value="b">b - Maps</option>
@@ -506,7 +506,7 @@
                                     <option value="|">| - No attempt to code</option>
                                 </select>
                                 <label for="p20">20 - Illustrations (006/01-04)</label>
-                                <select class="form-select" aria-label="Illustrations" id="p20" v-model="f008.p20">
+                                <select class="form-select" aria-label="Illustrations" id="p20" v-model="record.f008.p20">
                                     <option value="^">^ - No illustrations</option>
                                     <option value="a">a - Illustrations</option>
                                     <option value="b">b - Maps</option>
@@ -526,7 +526,7 @@
                                     <option value="|">| - No attempt to code</option>
                                 </select>
                                 <label for="p21">21 - Illustrations (006/01-04)</label>
-                                <select class="form-select" aria-label="Illustrations" id="p21" v-model="f008.p21">
+                                <select class="form-select" aria-label="Illustrations" id="p21" v-model="record.f008.p21">
                                     <option value="^">^ - No illustrations</option>
                                     <option value="a">a - Illustrations</option>
                                     <option value="b">b - Maps</option>
@@ -547,7 +547,7 @@
                                 </select>
 
                                 <label for="p22">22 - Target audience (006/05)</label>
-                                <select class="form-select" aria-label="Target audience" id="p22" v-model="f008.p22">
+                                <select class="form-select" aria-label="Target audience" id="p22" v-model="record.f008.p22">
                                     <option value="^">^ - Unknown or not specified</option>
                                     <option value="a">a - Preschool</option>
                                     <option value="b">b - Primary</option>
@@ -561,7 +561,7 @@
                                 </select>
 
                                 <label for="p23">23 - Form of item (006/06)</label>
-                                <select class="form-select" aria-label="Form of item" id="p23" v-model="f008.p23">
+                                <select class="form-select" aria-label="Form of item" id="p23" v-model="record.f008.p23">
                                     <option value="^">^ - None of the following</option>
                                     <option value="a">a - Microfilm</option>
                                     <option value="b">b - Microfiche</option>
@@ -576,7 +576,7 @@
                                 </select>
 
                                 <label for="p24">24 - Nature of contents (006/07-10)</label>
-                                <select class="form-select" aria-label="Nature of contents" id="p24" v-model="f008.p24">
+                                <select class="form-select" aria-label="Nature of contents" id="p24" v-model="record.f008.p24">
                                     <option value="^">^ - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
@@ -609,7 +609,7 @@
                                 </select>
 
                                 <label for="p25">25 - Nature of contents (006/07-10)</label>
-                                <select class="form-select" aria-label="Nature of contents" id="p25" v-model="f008.p25">
+                                <select class="form-select" aria-label="Nature of contents" id="p25" v-model="record.f008.p25">
                                     <option value="^">^ - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
@@ -642,7 +642,7 @@
                                 </select>
                     
                                 <label for="p26">26 - Nature of contents (006/07-10)</label>
-                                <select class="form-select" aria-label="Nature of contents" id="p26" v-model="f008.p26">
+                                <select class="form-select" aria-label="Nature of contents" id="p26" v-model="record.f008.p26">
                                     <option value="^">^ - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
@@ -675,7 +675,7 @@
                                 </select>
 
                                 <label for="p27">27 - Nature of contents (006/07-10)</label>
-                                <select class="form-select" aria-label="Nature of contents" id="p27" v-model="f008.p27">
+                                <select class="form-select" aria-label="Nature of contents" id="p27" v-model="record.f008.p27">
                                     <option value="^">^ - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
@@ -708,7 +708,7 @@
                                 </select>
 
                                 <label for="p28">28 - Government publication (006/11)</label>
-                                <select class="form-select" aria-label="Government publication" id="p28" v-model="f008.p28">
+                                <select class="form-select" aria-label="Government publication" id="p28" v-model="record.f008.p28">
                                     <option value="^">^ - Not a government publication</option>
                                     <option value="a">a - Autonomous or semi-autonomous component</option>
                                     <option value="c">c - Multilocal</option>
@@ -724,28 +724,28 @@
                                 </select>
 
                                 <label for="p29">29 - Conference publication (006/12)</label>
-                                <select class="form-select" aria-label="Conference publication" id="p29" v-model="f008.p29">
+                                <select class="form-select" aria-label="Conference publication" id="p29" v-model="record.f008.p29">
                                     <option value="0">0 - Not a conference publication</option>
                                     <option value="1">1 - Conference publication</option>
                                     <option value="|">| - No attempt to code</option>
                                 </select>
 
                                 <label for="p30">30 - Festschrift (006/13)</label>
-                                <select class="form-select" aria-label="Festschrift" id="p30" v-model="f008.p30">
+                                <select class="form-select" aria-label="Festschrift" id="p30" v-model="record.f008.p30">
                                     <option value="0">0 - Not a festschrift</option>
                                     <option value="1">1 - Festschrift</option>
                                     <option value="|">| - No attempt to code</option>
                                 </select>
                      
                                 <label for="p31">31 - Index (006/14)</label>
-                                <select class="form-select" aria-label="Index" id="p31" v-model="f008.p31">
+                                <select class="form-select" aria-label="Index" id="p31" v-model="record.f008.p31">
                                     <option value="0">0 - No index</option>
                                     <option value="1">1 - Index present</option>
                                     <option value="|">| - No attempt to code</option>
                                 </select>
 
                                 <label for="p33">33 - Literary form (006/16)</label>
-                                <select class="form-select" aria-label="Literary form" id="p33" v-model="f008.p33">
+                                <select class="form-select" aria-label="Literary form" id="p33" v-model="record.f008.p33">
                                     <option value="0">0 - Not fiction (not further specified)</option>
                                     <option value="1">1 - Fiction (not further specified)</option>
                                     <option value="d">d - Dramas</option>
@@ -762,7 +762,7 @@
                                 </select>
 
                                 <label for="p34">34 - Biography (006/17)</label>
-                                <select class="form-select" aria-label="Biography" id="p34" v-model="f008.p34">
+                                <select class="form-select" aria-label="Biography" id="p34" v-model="record.f008.p34">
                                     <option value="^">^ - No biographical material</option>
                                     <option value="a">a - Autobiography</option>
                                     <option value="b">b - Individual biography</option>
@@ -774,7 +774,7 @@
                             <template v-if="recordType === 'Serial'">
 
                                 <label for="p18">18 - Frequency (006/01)</label>
-                                <select class="form-select" aria-label="Frequency" id="p18" v-model="f008.p18">
+                                <select class="form-select" aria-label="Frequency" id="p18" v-model="record.f008.p18">
                                     <option value="^">^ - No determinable frequency</option>
                                     <option value="a">a - Annual</option>
                                     <option value="b">b - Bimonthly</option>
@@ -798,7 +798,7 @@
                                 </select>
 
                                 <label for="p19">19 - Regularity (006/02)</label>
-                                <select class="form-select" aria-label="Regularity" id="p19" v-model="f008.p19">
+                                <select class="form-select" aria-label="Regularity" id="p19" v-model="record.f008.p19">
                                     <option value="n">n - Normalized irregular</option>
                                     <option value="r">r - Regular</option>
                                     <option value="u">u - Unknown</option>
@@ -807,7 +807,7 @@
                                 </select>
 
                                 <label for="p21">21 - Type of continuing resource (006/04)</label>
-                                <select class="form-select" aria-label="Type of continuing resource" id="p21" v-model="f008.p21">
+                                <select class="form-select" aria-label="Type of continuing resource" id="p21" v-model="record.f008.p21">
                                     <option value="#"># - None of the following</option>
                                     <option value="d">d - Updating database</option>
                                     <option value="g">g - Magazine</option>
@@ -825,7 +825,7 @@
                                 </select>
 
                                 <label for="p22">22 - Form of original item (006/05)</label>
-                                <select class="form-select" aria-label="Form of original item" id="p22" v-model="f008.p22">
+                                <select class="form-select" aria-label="Form of original item" id="p22" v-model="record.f008.p22">
                                     <option value="#"># - None of the following</option>
                                     <option value="a">a - Microfilm</option>
                                     <option value="b">b - Microfiche</option>
@@ -840,7 +840,7 @@
                                 </select>
 
                                 <label for="p23">23 - Form of item (006/06)</label>
-                                <select class="form-select" aria-label="Form of item" id="p23" v-model="f008.p23">
+                                <select class="form-select" aria-label="Form of item" id="p23" v-model="record.f008.p23">
                                     <option value="#"># - None of the following</option>
                                     <option value="a">a - Microfilm</option>
                                     <option value="b">b - Microfiche</option>
@@ -855,7 +855,7 @@
                                 </select>
 
                                 <label for="p24">24 - Nature of entire work (006/07)</label>
-                                <select class="form-select" aria-label="Nature of entire work" id="p24" v-model="f008.p24">
+                                <select class="form-select" aria-label="Nature of entire work" id="p24" v-model="record.f008.p24">
                                     <option value="#"># - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
@@ -888,7 +888,7 @@
                                 </select>
 
                                 <label for="p25">25 - Nature of contents (006/07-10)</label>
-                                <select class="form-select" aria-label="Nature of contents" id="p25" v-model="f008.p25">
+                                <select class="form-select" aria-label="Nature of contents" id="p25" v-model="record.f008.p25">
                                 <option value="#"># - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
@@ -921,7 +921,7 @@
                                 </select>
 
                                 <label for="p26">26 - Nature of contents (006/07-10)</label>
-                                <select class="form-select" aria-label="Nature of contents" id="p26" v-model="f008.p26">
+                                <select class="form-select" aria-label="Nature of contents" id="p26" v-model="record.f008.p26">
                                 <option value="#"># - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
@@ -954,7 +954,7 @@
                                 </select>
 
                                 <label for="p27">27 - Nature of contents (006/07-10)</label>
-                                <select class="form-select" aria-label="Nature of contents" id="p27" v-model="f008.p27">
+                                <select class="form-select" aria-label="Nature of contents" id="p27" v-model="record.f008.p27">
                                 <option value="#"># - No specified nature of contents</option>
                                     <option value="a">a - Abstracts/summaries</option>
                                     <option value="b">b - Bibliographies</option>
@@ -987,7 +987,7 @@
                                 </select>
 
                                 <label for="p28">28 - Government publication (006/11)</label>
-                                <select class="form-select" aria-label="Government publication" id="p28" v-model="f008.p28">
+                                <select class="form-select" aria-label="Government publication" id="p28" v-model="record.f008.p28">
                                     <option value="#"># - Not a government publication</option>
                                     <option value="a">a - Autonomous or semi-autonomous component</option>
                                     <option value="c">c - Multilocal</option>
@@ -1003,14 +1003,14 @@
                                 </select>
 
                                 <label for="p29">29 - Conference publication (006/12)</label>
-                                <select class="form-select" aria-label="Conference publication" id="p29" v-model="f008.p29">
+                                <select class="form-select" aria-label="Conference publication" id="p29" v-model="record.f008.p29">
                                     <option value="0">0 - Not a conference publication</option>
                                     <option value="1">1 - Conference publication</option>
                                     <option value="|">| - No attempt to code</option>
                                 </select>
 
                                 <label for="p33">33 - Original alphabet or script of title (006/16)</label>
-                                <select class="form-select" aria-label="Original alphabet or script of title" id="p33" v-model="f008.p33">
+                                <select class="form-select" aria-label="Original alphabet or script of title" id="p33" v-model="record.f008.p33">
                                     <option value="#"># - No alphabet or script given/No key title</option>
                                     <option value="a">a - Basic Roman</option>
                                     <option value="b">b - Extended Roman</option>
@@ -1030,7 +1030,7 @@
                                 </select>
 
                                 <label for="p34">34 - Entry convention (006/17)</label>
-                                <select class="form-select" aria-label="Entry convention" id="p34" v-model="f008.p34">
+                                <select class="form-select" aria-label="Entry convention" id="p34" v-model="record.f008.p34">
                                     <option value="0">0 - Successive entry</option>
                                     <option value="1">1 - Latest entry</option>
                                     <option value="2">2 - Integrated entry</option>
@@ -1041,7 +1041,7 @@
                             </template>
 
                             <label for="008_35_37">35-37 - Language</label>
-                            <select class="form-select selectpicker" aria-label="Place of publication" id="008_35_37" v-model="f008.p35_37" data-live-search="true">
+                            <select class="form-select selectpicker" aria-label="Place of publication" id="008_35_37" v-model="record.f008.p35_37" data-live-search="true">
                                 <option value="por">por - Portuguese</option>
                                 <option value="eng">eng - English</option>
                                 <option value="###">### - No information provided</option>
@@ -1570,7 +1570,7 @@
                             </select>
                             <br/>
                             <label for="p38">38 - Modified record</label>
-                            <select class="form-select" aria-label="Modified record" id="p38" v-model="f008.p38">
+                            <select class="form-select" aria-label="Modified record" id="p38" v-model="record.f008.p38">
                                 <option value="^">^ - Not modified</option>
                                 <option value="d">d - Dashed-on information omitted</option>
                                 <option value="o">o - Completely romanized/printed cards romanized</option>
@@ -1581,7 +1581,7 @@
                             </select>
 
                             <label for="p39">39 - Cataloging source</label>
-                            <select class="form-select" aria-label="Cataloging source" id="p39" v-model="f008.p39">
+                            <select class="form-select" aria-label="Cataloging source" id="p39" v-model="record.f008.p39">
                                 <option value="^">^ - National bibliographic agency</option>
                                 <option value="c">c - Cooperative cataloging program</option>
                                 <option value="d">d - Other</option>
@@ -1650,7 +1650,7 @@
                                                     record._260c = Z3950Record.pub_date,
                                                     record._260b = Z3950Record.publisher,
                                                     record._300a = Z3950Record.extent
-                                                    f008.p35_37 = Z3950Record.language
+                                                    record.f008.p35_37 = Z3950Record.language
                                                 ">Use</button>
                                             </td>
                                         </tr>
@@ -1685,7 +1685,7 @@
                         <!-- LDR -->
                         <div v-show="ldrShow" class="alert alert-warning alert-dismissible fade show" role="alert">
                             <label for="record_status">05 - Record status</label>
-                            <select class="form-select" aria-label="Record status" id="record_status" v-model="ldr.record_status">
+                            <select class="form-select" aria-label="Record status" id="record_status" v-model="record.ldr.record_status">
                                 <option value="a">a - Increase in encoding level</option>
                                 <option value="c">c - Corrected or revised</option>
                                 <option value="d">d - Deleted</option>
@@ -1693,7 +1693,7 @@
                                 <option value="p">p - Increase in encoding level from prepublication</option>
                             </select>
                             <label for="type_of_record">06 - Type of record</label>
-                            <select class="form-select" aria-label="Type of record" id="type_of_record" v-model="ldr.type_of_record">
+                            <select class="form-select" aria-label="Type of record" id="type_of_record" v-model="record.ldr.type_of_record">
                                 <option value="a">a - Language material</option>
                                 <option value="c">c - Notated music</option>
                                 <option value="d">d - Manuscript notated music</option>
@@ -1710,7 +1710,7 @@
                                 <option value="t">t - Manuscript language material</option>
                             </select>
                             <label for="bibliographic_level">07 - Bibliographic level</label>
-                            <select class="form-select" aria-label="Bibliographic level" id="bibliographic_level" v-model="ldr.bibliographic_level">
+                            <select class="form-select" aria-label="Bibliographic level" id="bibliographic_level" v-model="record.ldr.bibliographic_level">
                                 <option value="a">a - Monographic component part</option>
                                 <option value="b">b - Serial component part</option>
                                 <option value="c">c - Collection</option>
@@ -1720,12 +1720,12 @@
                                 <option value="s">s - Serial</option>
                             </select>
                             <label for="type_of_control">08 - Type of control</label>
-                            <select class="form-select" aria-label="Type of control" id="type_of_control" v-model="ldr.type_of_control">
+                            <select class="form-select" aria-label="Type of control" id="type_of_control" v-model="record.ldr.type_of_control">
                                 <option value="^">^ - No specified type</option>
                                 <option value="a">a - Archival</option>
                             </select>
                             <label for="character_coding_scheme">09 - Character coding scheme</label>
-                            <select class="form-select" aria-label="Character coding scheme" id="character_coding_scheme" v-model="ldr.character_coding_scheme">
+                            <select class="form-select" aria-label="Character coding scheme" id="character_coding_scheme" v-model="record.ldr.character_coding_scheme">
                                 <option value="^">^ - MARC-8</option>
                                 <option value="a">a - UCS/Unicode</option>
                             </select>
@@ -1734,7 +1734,7 @@
                                 <input v-model="base_address_of_data" type="text" class="form-control" id="base_address_of_data">
                             </div> -->
                             <label for="encoding_level">17 - Encoding level</label>
-                            <select class="form-select" aria-label="Encoding level" id="encoding_level" v-model="ldr.encoding_level">
+                            <select class="form-select" aria-label="Encoding level" id="encoding_level" v-model="record.ldr.encoding_level">
                                 <option value="^">^ - Full level</option>
                                 <option value="1">1 - Full level, material not examined</option>
                                 <option value="2">2 - Less-than-full level, material not examined</option>
@@ -1752,7 +1752,7 @@
                                 <option value="M">M - Less-than-full cataloging added from tapeloading</option>
                             </select>
                             <label for="descriptive_cataloging_form">18 - Descriptive cataloging form</label>
-                            <select class="form-select" aria-label="Descriptive cataloging form" id="descriptive_cataloging_form" v-model="ldr.descriptive_cataloging_form">
+                            <select class="form-select" aria-label="Descriptive cataloging form" id="descriptive_cataloging_form" v-model="record.ldr.descriptive_cataloging_form">
                                 <option value="^">^ - Non-ISBD</option>
                                 <option value="a">a - AACR 2</option>
                                 <option value="c">c - ISBD punctuation omitted</option>
@@ -1761,7 +1761,7 @@
                                 <option value="u">u - Unknown</option>
                             </select>
                             <label for="multipart_resource_record_level">19 - Multipart resource record level</label>
-                            <select class="form-select" aria-label="Multipart resource record level" id="multipart_resource_record_level" v-model="ldr.multipart_resource_record_level">
+                            <select class="form-select" aria-label="Multipart resource record level" id="multipart_resource_record_level" v-model="record.ldr.multipart_resource_record_level">
                                 <option value="^">^ - Not specified or not applicable</option>
                                 <option value="a">a - Set</option>
                                 <option value="b">b - Part with independent title</option>
@@ -1985,51 +1985,53 @@
                 doiShow: false,
                 isbnShow: false,
                 f008Show: false,
-                ldr:{
-                    record_length: '^^^^^',
-                    record_status: 'n',
-                    type_of_record: 'a',
-                    bibliographic_level: 'm',
-                    type_of_control: '^',
-                    character_coding_scheme: 'a',
-                    base_address_of_data:'00000', 
-                    encoding_level: 'I',
-                    descriptive_cataloging_form: 'a',
-                    multipart_resource_record_level: '^'
-                },
-                f008:{
-                    p00_05: '^^^^^^',
-                    p06: 's',
-                    p07_10: '0000',
-                    p11_14: '^^^^',
-                    p15_17: 'bl^',
-                    p18: '^',
-                    p19: '^',
-                    p20: '^',
-                    p21: '^',
-                    p22: '^',
-                    p23: '^',
-                    p24: '^',
-                    p25: '^',
-                    p26: '^',
-                    p27: '^',
-                    p28: '^',
-                    p29: '0',
-                    p30: '0',
-                    p31: '0',
-                    p32: '^',
-                    p33: '0',
-                    p34: '^',
-                    p35_37: 'por',
-                    p38: '^',
-                    p39: 'd'
-                },
+
+
                 crossrefRecord: null,
                 openAlexRecord: null,
                 ISBNRecord: null,
                 Z3950Records: null,
                 recordType: 'Book',
                 record: {
+                    ldr:{
+                        record_length: '^^^^^',
+                        record_status: 'n',
+                        type_of_record: 'a',
+                        bibliographic_level: 'm',
+                        type_of_control: '^',
+                        character_coding_scheme: 'a',
+                        base_address_of_data:'00000', 
+                        encoding_level: 'I',
+                        descriptive_cataloging_form: 'a',
+                        multipart_resource_record_level: '^'
+                    },
+                    f008:{
+                        p00_05: '^^^^^^',
+                        p06: 's',
+                        p07_10: '0000',
+                        p11_14: '^^^^',
+                        p15_17: 'bl^',
+                        p18: '^',
+                        p19: '^',
+                        p20: '^',
+                        p21: '^',
+                        p22: '^',
+                        p23: '^',
+                        p24: '^',
+                        p25: '^',
+                        p26: '^',
+                        p27: '^',
+                        p28: '^',
+                        p29: '0',
+                        p30: '0',
+                        p31: '0',
+                        p32: '^',
+                        p33: '0',
+                        p34: '^',
+                        p35_37: 'por',
+                        p38: '^',
+                        p39: 'd'
+                    },
                     _001: "",
                     _003: "",
                     _005: "",
@@ -2100,19 +2102,19 @@
                     }
 
                     return '\n000000001 FMT   L BK' +
-                    '\n000000001 LDR   L ' + this.ldr.record_length + this.ldr.record_status + this.ldr.type_of_record + this.ldr.bibliographic_level + this.ldr.type_of_control + 
-                    this.ldr.character_coding_scheme + '22' + this.ldr.base_address_of_data + this.ldr.encoding_level + this.ldr.descriptive_cataloging_form + 
-                    this.ldr.multipart_resource_record_level + '4500' +
+                    '\n000000001 LDR   L ' + this.record.ldr.record_length + this.record.ldr.record_status + this.record.ldr.type_of_record + this.record.ldr.bibliographic_level + this.record.ldr.type_of_control + 
+                    this.record.ldr.character_coding_scheme + '22' + this.record.ldr.base_address_of_data + this.record.ldr.encoding_level + this.record.ldr.descriptive_cataloging_form + 
+                    this.record.ldr.multipart_resource_record_level + '4500' +
                     '\n000000001 BAS   L $$a04' +
-                    '\n000000001 008   L ' + this.f008.p00_05 + this.f008.p06 + this.f008.p07_10 + this.f008.p11_14 + this.f008.p15_17 + this.f008.p18 + this.f008.p19 + 
-                    this.f008.p20 + this.f008.p21 + this.f008.p22 + this.f008.p23 +
-                    this.f008.p24 + this.f008.p25 + this.f008.p26 + this.f008.p27 + this.f008.p28 + this.f008.p29 + this.f008.p30 + this.f008.p31 + this.f008.p32 +
-                    this.f008.p33 + this.f008.p34 +  this.f008.p35_37 + this.f008.p38 + this.f008.p39 +
+                    '\n000000001 008   L ' + this.record.f008.p00_05 + this.record.f008.p06 + this.record.f008.p07_10 + this.record.f008.p11_14 + this.record.f008.p15_17 + this.record.f008.p18 + this.record.f008.p19 + 
+                    this.record.f008.p20 + this.record.f008.p21 + this.record.f008.p22 + this.record.f008.p23 +
+                    this.record.f008.p24 + this.record.f008.p25 + this.record.f008.p26 + this.record.f008.p27 + this.record.f008.p28 + this.record.f008.p29 + this.record.f008.p30 + this.record.f008.p31 + this.record.f008.p32 +
+                    this.record.f008.p33 + this.record.f008.p34 +  this.record.f008.p35_37 + this.record.f008.p38 + this.record.f008.p39 +
                     (this.record.isbn ? '\n=020  ##$a' + this.record.isbn : '') +
                     (this.record.doi ? '\n000000001 0247  L $$a' + this.record.doi + '$$2doi': '') +
                     '\n000000001 040   L $$aUSP/AGUIA' +
-                    '\n000000001 0410  L $$a' + this.f008.p35_37 +
-                    '\n000000001 044   L $$a' + this.f008.p15_17.replace('^', '')  +
+                    '\n000000001 0410  L $$a' + this.record.f008.p35_37 +
+                    '\n000000001 044   L $$a' + this.record.f008.p15_17.replace('^', '')  +
                     (this.record.personal_name[0] ? '\n000000001 100' + this.record.personal_name[0].ind1 + '  L $$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$$q' + this.record.personal_name[0].q : '') + (this.record.personal_name[0]._0 ? '$$0' + this.record.personal_name[0]._0 : '') + (this.record.personal_name[0]._8 ? '$$5' + this.record.personal_name[0]._5 : '') + (this.record.personal_name[0]._8 ? '$$8' + this.record.personal_name[0]._8 : '') : '') +
                     '\n000000001 245' + this.record._245_ind1 + this.record._245_ind2 + ' L $$a' + this.record.title +
                     (this.record.subtitle ? '$$b' + this.record.subtitle : '') +
@@ -2189,9 +2191,17 @@
                         this.record._260b = this.crossrefRecord.data.message.publisher,
                         this.record._520a = this.crossrefRecord.data.message.abstract,
                         this.record._260c = this.crossrefRecord.data.message.issued['date-parts'][0][0],
-                        this.f008.p07_10 = this.crossrefRecord.data.message.issued['date-parts'][0][0]                        
+                        this.record.f008.p07_10 = this.crossrefRecord.data.message.issued['date-parts'][0][0]                        
                         Object.values(this.crossrefRecord.data.message.author).forEach(val => {
-                            this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given, _0: val.ORCID, _8: val.affiliation[0].name });
+                            if (val.affiliation[0]) {
+                                this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given, _0: val.ORCID, _8: val.affiliation[0].name });
+                            } else {
+                                if (val.ORCID) {
+                                    this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given, _0: val.ORCID });
+                                } else {
+                                    this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given });
+                                }                                
+                            }                            
                         });
                         Object.values(this.crossrefRecord.data.message.subject).forEach(val => {
                             this.record._650.push({ a: val });
@@ -2209,7 +2219,7 @@
                         }
                         switch (this.crossrefRecord.data.message.language) {
                             case "en":
-                                this.f008.p35_37 = 'eng';
+                                this.record.f008.p35_37 = 'eng';
                                 break;
                             }
                         })
@@ -2234,7 +2244,7 @@
                         this.record._260b = this.openAlexRecord.data.host_venue.publisher,
                         // this.record._520a = this.crossrefRecord.data.message.abstract,
                         this.record._260c = this.openAlexRecord.data.publication_year,
-                        this.f008.p07_10 = this.openAlexRecord.data.publication_year
+                        this.record.f008.p07_10 = this.openAlexRecord.data.publication_year
                         // Object.values(this.crossrefRecord.data.message.author).forEach(val => {
                         //     this.record.personal_name.push({ ind1: '1', a: val.family + ', ' + val.given });
                         // });
@@ -2256,7 +2266,7 @@
                         this.record.title = this.ISBNRecord.items[0].volumeInfo.title,
                         //this.record.abstract = this.ISBNRecord.items.[0].volumeInfo.description,
                         this.record._260c = this.ISBNRecord.items[0].volumeInfo.publishedDate,
-                        this.f008.p07_10 = this.ISBNRecord.items[0].volumeInfo.publishedDate
+                        this.record.f008.p07_10 = this.ISBNRecord.items[0].volumeInfo.publishedDate
                         this.record._300a = this.ISBNRecord.items[0].volumeInfo.pageCount + 'p.'
                         Object.values(this.ISBNRecord.items[0].volumeInfo.authors).forEach(val => {
                            this.record.author.push({ ind1: '1', a: val });
