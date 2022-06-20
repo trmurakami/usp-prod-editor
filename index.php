@@ -2082,7 +2082,7 @@
 
                     this.record.personal_names_array = [];
                     for (this.i_personal_name = 1; this.i_personal_name < this.record.personal_name.length; this.i_personal_name++) {
-                        this.record.personal_names_array.push('\n000000001 700' + this.record.personal_name[this.i_personal_name].ind1 + '  L $$a' + this.record.personal_name[this.i_personal_name].a + (this.record.personal_name[this.i_personal_name].d ? '$d' + this.record.personal_name[this.i_personal_name].d : '') + (this.record.personal_name[this.i_personal_name].q ? '$q' + this.record.personal_name[this.i_personal_name].q : '') + (this.record.personal_name[0]._0 ? '$$0' + this.record.personal_name[0]._0 : '') + (this.record.personal_name[0]._8 ? '$$5' + this.record.personal_name[0]._5 : '') + (this.record.personal_name[0]._8 ? '$$8' + this.record.personal_name[0]._8 : ''));
+                        this.record.personal_names_array.push('\n000000001 700' + this.record.personal_name[this.i_personal_name].ind1 + '  L $$a' + this.record.personal_name[this.i_personal_name].a + (this.record.personal_name[this.i_personal_name].d ? '$d' + this.record.personal_name[this.i_personal_name].d : '') + (this.record.personal_name[this.i_personal_name].q ? '$q' + this.record.personal_name[this.i_personal_name].q : '') + (this.record.personal_name[this.i_personal_name]._0 ? '$$0' + this.record.personal_name[this.i_personal_name]._0 : '') + (this.record.personal_name[this.i_personal_name]._5 ? '$$5' + this.record.personal_name[this.i_personal_name]._5 : '') + (this.record.personal_name[this.i_personal_name]._8 ? '$$8' + this.record.personal_name[this.i_personal_name]._8 : ''));
                     }                    
                     this.i_personal_name = 1;
 
@@ -2115,7 +2115,7 @@
                     '\n000000001 040   L $$aUSP/AGUIA' +
                     '\n000000001 0410  L $$a' + this.record.f008.p35_37 +
                     '\n000000001 044   L $$a' + this.record.f008.p15_17.replace('^', '')  +
-                    (this.record.personal_name[0] ? '\n000000001 100' + this.record.personal_name[0].ind1 + '  L $$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$$q' + this.record.personal_name[0].q : '') + (this.record.personal_name[0]._0 ? '$$0' + this.record.personal_name[0]._0 : '') + (this.record.personal_name[0]._8 ? '$$5' + this.record.personal_name[0]._5 : '') + (this.record.personal_name[0]._8 ? '$$8' + this.record.personal_name[0]._8 : '') : '') +
+                    (this.record.personal_name[0] ? '\n000000001 100' + this.record.personal_name[0].ind1 + '  L $$a' + this.record.personal_name[0].a + (this.record.personal_name[0].d ? '$$d' + this.record.personal_name[0].d : '') + (this.record.personal_name[0].q ? '$$q' + this.record.personal_name[0].q : '') + (this.record.personal_name[0]._0 ? '$$0' + this.record.personal_name[0]._0 : '') + (this.record.personal_name[0]._5 ? '$$5' + this.record.personal_name[0]._5 : '') + (this.record.personal_name[0]._8 ? '$$8' + this.record.personal_name[0]._8 : '') : '') +
                     '\n000000001 245' + this.record._245_ind1 + this.record._245_ind2 + ' L $$a' + this.record.title +
                     (this.record.subtitle ? '$$b' + this.record.subtitle : '') +
                     '\n000000001 260   L ' + (this.record._260a ? '$$a' + this.record._260a : '') + 
