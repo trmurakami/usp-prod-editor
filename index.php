@@ -2082,7 +2082,7 @@
 
                     this.record.personal_names_array = [];
                     for (this.i_personal_name = 1; this.i_personal_name < this.record.personal_name.length; this.i_personal_name++) {
-                        this.record.personal_names_array.push('\n000000001 700' + this.record.personal_name[this.i_personal_name].ind1 + '  L $$a' + this.record.personal_name[this.i_personal_name].a + (this.record.personal_name[this.i_personal_name].d ? '$d' + this.record.personal_name[this.i_personal_name].d : '') + (this.record.personal_name[this.i_personal_name].q ? '$q' + this.record.personal_name[this.i_personal_name].q : '') + (this.record.personal_name[0]._0 ? '$$0' + this.record.personal_name[0]._0 : '') + (this.record.personal_name[0]._8 ? '$$5' + this.record.personal_name[0]._5 : '') + (this.record.personal_name[0]._8 ? '$$8' + this.record.personal_name[0]._8 : '') : '');
+                        this.record.personal_names_array.push('\n000000001 700' + this.record.personal_name[this.i_personal_name].ind1 + '  L $$a' + this.record.personal_name[this.i_personal_name].a + (this.record.personal_name[this.i_personal_name].d ? '$d' + this.record.personal_name[this.i_personal_name].d : '') + (this.record.personal_name[this.i_personal_name].q ? '$q' + this.record.personal_name[this.i_personal_name].q : '') + (this.record.personal_name[0]._0 ? '$$0' + this.record.personal_name[0]._0 : '') + (this.record.personal_name[0]._8 ? '$$5' + this.record.personal_name[0]._5 : '') + (this.record.personal_name[0]._8 ? '$$8' + this.record.personal_name[0]._8 : ''));
                     }                    
                     this.i_personal_name = 1;
 
